@@ -1,0 +1,35 @@
+# SAIFU
+
+Official bilingual website for 北京赛蚨里奇科技有限公司 (Beijing Saifuliqi Technology Co., Ltd.).
+
+SAIFU develops AI video tools and custom AI video applications for creators, teams, and businesses.
+
+## Development
+
+Requires Node.js `>=22.13.0`.
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Verification
+
+```bash
+npm run build
+npm test
+```
+
+## Project structure
+
+- `app/` — bilingual React website and visual styles
+- `public/` — production website assets
+- `worker/` — Cloudflare/Vinext worker entry point
+- `.openai/hosting.json` — optional hosting bindings
+
+## Company
+
+北京赛蚨里奇科技有限公司<br>
+Beijing Saifuliqi Technology Co., Ltd.
