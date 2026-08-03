@@ -41,12 +41,14 @@ test("server-renders the SAIFU company website", async () => {
   assert.match(html, /北京赛蚨里奇科技有限公司/);
 });
 
-test("keeps bilingual copy and responsive design in the source", async () => {
-  const [page, layout, css, packageJson] = await Promise.all([
+test("keeps bilingual copy, SEO metadata, and responsive design in the source", async () => {
+  const [page, layout, css, packageJson, robots, sitemap] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
+    readFile(new URL("../public/robots.txt", import.meta.url), "utf8"),
+    readFile(new URL("../public/sitemap.xml", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /type Language = "zh" \| "en"/);
@@ -55,10 +57,16 @@ test("keeps bilingual copy and responsive design in the source", async () => {
   assert.match(page, /Custom AI Video Applications/);
   assert.match(page, /const navTargets = \["about", "capabilities", "services", "contact"\]/);
   assert.match(layout, /SAIFU｜AI 视频生成工具与应用开发/);
+  assert.match(layout, /https:\/\/saifuliqi\.com/);
+  assert.match(layout, /Organization/);
+  assert.match(layout, /北京赛蚨里奇科技有限公司/);
+  assert.match(layout, /\/og\.png/);
   assert.match(css, /@media \(max-width: 620px\)/);
   assert.match(css, /SpaceGrotesk-Variable\.woff2/);
   assert.match(css, /MiSans-Regular\.woff2/);
   assert.doesNotMatch(css, /Instrument Serif/);
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.match(packageJson, /"name": "saifu-ai-video-website"/);
+  assert.match(robots, /Sitemap: https:\/\/saifuliqi\.com\/sitemap\.xml/);
+  assert.match(sitemap, /<loc>https:\/\/saifuliqi\.com\/<\/loc>/);
 });
