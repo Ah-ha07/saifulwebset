@@ -359,7 +359,8 @@ export default function Home() {
     <main className={`site language-${language}`}>
       <header className="site-nav liquid-glass">
         <a className="brand" href="#top" aria-label="Saifu home">
-          <span className="brand-dot">S</span><strong>SAIFU</strong>
+          <img className="brand-mark" src="/saifu-mark.svg" alt="" aria-hidden="true" />
+          <strong>SAIFU</strong>
         </a>
         <nav className="nav-links" aria-label="Primary navigation">
           {t.nav.map((item, index) => (
@@ -399,7 +400,7 @@ export default function Home() {
         <div className="hero-center">
           <h1>
             <motion.span
-              className="display-serif"
+              className="display-accent"
               initial={{ opacity: 0, y: 26, filter: "blur(10px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 1.05, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
@@ -439,7 +440,7 @@ export default function Home() {
         <motion.div className="section-label" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>{t.aboutLabel}</motion.div>
         <div className="about-grid">
           <motion.h2 initial={{ opacity: 0, y: 42 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: .85, ease: [0.16, 1, 0.3, 1] }}>
-            {t.aboutLead}<br /><em className="display-serif">{t.aboutAccent}</em>
+            {t.aboutLead}<br /><em className="display-accent">{t.aboutAccent}</em>
           </motion.h2>
           <motion.div className="about-copy" initial={{ opacity: 0, y: 34 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: .75, delay: .12 }}>
             <p>{t.aboutBody}</p><p>{t.aboutBody2}</p>
@@ -456,7 +457,7 @@ export default function Home() {
 
       <section className="philosophy section-shell" id="capabilities">
         <motion.h2 initial={{ opacity: 0, y: 38 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: .8 }}>
-          {t.philosophyTitleA} <em className="display-serif">×</em> <span className="display-serif">{t.philosophyTitleB}</span>
+          {t.philosophyTitleA} <em className="display-accent">×</em> <span className="display-accent">{t.philosophyTitleB}</span>
         </motion.h2>
         <div className="philosophy-grid">
           <motion.div className="philosophy-media" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: .85, ease: [0.16, 1, 0.3, 1] }}>
@@ -471,7 +472,7 @@ export default function Home() {
 
       <section className="services section-shell" id="services">
         <motion.div className="services-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .7 }}>
-          <h2 className="display-serif">{t.servicesTitle}</h2><span>{t.servicesLabel}</span>
+          <h2 className="display-accent">{t.servicesTitle}</h2><span>{t.servicesLabel}</span>
         </motion.div>
         <div className="services-grid">
           <ServiceCard video={TOOL_VIDEO} tag={t.toolTag} title={t.toolTitle} body={t.toolBody} />
@@ -489,7 +490,10 @@ export default function Home() {
       </section>
 
       <footer className="footer section-shell">
-        <div className="brand"><span className="brand-dot">S</span><strong>SAIFU</strong></div>
+        <div className="brand" aria-label="SAIFU">
+          <img className="brand-mark" src="/saifu-mark.svg" alt="" aria-hidden="true" />
+          <strong>SAIFU</strong>
+        </div>
         <p>© 2026 北京赛蚨里奇科技有限公司 · Beijing Saifuliqi Technology Co., Ltd.</p>
         <a href="#top">BACK TO TOP <ArrowUpRight size={15} /></a>
       </footer>

@@ -1,5 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
 @import "tailwindcss";
+
+@font-face {
+  font-family: "MiSans";
+  src: url("/fonts/MiSans-Regular.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("/fonts/MiSans-Semibold.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SpaceGrotesk-Variable.woff2") format("woff2-variations");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300 700;
+}
 
 :root {
   --ink: #f2f0e9;
@@ -29,8 +52,9 @@ body {
     radial-gradient(circle at 70% 34%, rgba(100, 80, 255, 0.06), transparent 27rem),
     var(--night);
   color: var(--ink);
-  font-family: "Avenir Next", Avenir, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: "Space Grotesk", "MiSans", "PingFang SC", "Microsoft YaHei", sans-serif;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body::after {
@@ -69,10 +93,18 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
-.display-serif {
-  font-family: "Instrument Serif", Iowan Old Style, Baskerville, "Times New Roman", serif;
-  font-style: italic;
-  font-weight: 400;
+.language-zh {
+  font-family: "MiSans", "Space Grotesk", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.language-en {
+  font-family: "Space Grotesk", "MiSans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.display-accent {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 600;
 }
 
 .section-shell {
@@ -121,27 +153,22 @@ a:focus-visible {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
   width: max-content;
-  letter-spacing: 0.14em;
 }
 
-.brand-dot {
-  display: grid;
-  width: 35px;
-  height: 35px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--ink);
-  color: #090909;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: -0.08em;
+.brand-mark {
+  width: 25px;
+  height: 31px;
+  flex: none;
 }
 
 .brand strong {
-  font-size: 10px;
-  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1;
 }
 
 .nav-links {
@@ -302,9 +329,9 @@ a:focus-visible {
   flex-direction: column;
   align-items: center;
   margin: 0;
-  font-size: clamp(64px, 9.3vw, 142px);
-  line-height: 0.78;
-  letter-spacing: -0.065em;
+  font-size: clamp(62px, 8.8vw, 134px);
+  line-height: 0.88;
+  letter-spacing: -0.055em;
   text-shadow: 0 7px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -315,13 +342,13 @@ a:focus-visible {
 
 .hero h1 span {
   color: rgba(255, 255, 255, 0.96);
-  letter-spacing: -0.055em;
+  letter-spacing: -0.045em;
 }
 
 .hero h1 strong {
-  margin-top: 0.23em;
+  margin-top: 0.17em;
   color: #fff;
-  font-weight: 620;
+  font-weight: 600;
 }
 
 .hero-center > p {
@@ -414,9 +441,9 @@ a:focus-visible {
 .about h2 {
   margin: 0;
   font-size: clamp(56px, 7vw, 104px);
-  font-weight: 560;
-  line-height: 0.98;
-  letter-spacing: -0.06em;
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
 }
 
 .about h2 em {
@@ -424,7 +451,7 @@ a:focus-visible {
   max-width: 940px;
   margin-top: 0.12em;
   color: var(--paper);
-  letter-spacing: -0.035em;
+  letter-spacing: -0.025em;
 }
 
 .about-copy {
@@ -617,9 +644,9 @@ a:focus-visible {
 .philosophy > h2 {
   margin: 0 0 76px;
   font-size: clamp(70px, 11.5vw, 170px);
-  font-weight: 540;
-  line-height: 0.78;
-  letter-spacing: -0.075em;
+  font-weight: 600;
+  line-height: 0.84;
+  letter-spacing: -0.06em;
   white-space: nowrap;
 }
 
@@ -733,9 +760,9 @@ a:focus-visible {
 .services-header h2 {
   margin: 0;
   font-size: clamp(64px, 8vw, 118px);
-  font-weight: 400;
-  line-height: 0.85;
-  letter-spacing: -0.055em;
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
 }
 
 .services-grid {
@@ -866,9 +893,9 @@ a:focus-visible {
   max-width: 880px;
   margin: 28px 0 24px;
   font-size: clamp(56px, 7.4vw, 108px);
-  font-weight: 560;
-  line-height: 0.94;
-  letter-spacing: -0.065em;
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
 }
 
 .contact-inner p {
@@ -997,13 +1024,13 @@ a:focus-visible {
     padding-left: 10px;
   }
 
-  .brand-dot {
-    width: 32px;
-    height: 32px;
+  .brand-mark {
+    width: 22px;
+    height: 28px;
   }
 
   .brand strong {
-    font-size: 8px;
+    font-size: 12px;
   }
 
   .language-switch {
@@ -1028,11 +1055,15 @@ a:focus-visible {
 
   .hero h1 {
     font-size: clamp(55px, 18.5vw, 82px);
-    line-height: 0.83;
+    line-height: 0.9;
+  }
+
+  .language-en .hero h1 {
+    font-size: clamp(47px, 15vw, 66px);
   }
 
   .hero h1 strong {
-    margin-top: 0.27em;
+    margin-top: 0.19em;
   }
 
   .hero-center > p {

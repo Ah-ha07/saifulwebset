@@ -32,6 +32,7 @@ test("server-renders the SAIFU company website", async () => {
   assert.match(html, /<title>SAIFU｜AI 视频生成工具与应用开发<\/title>/i);
   assert.match(html, /name="application-name" content="SAIFU"/i);
   assert.match(html, /class="site language-zh"/);
+  assert.match(html, /src="\/saifu-mark\.svg"/);
   assert.match(html, /<strong>SAIFU<\/strong>/);
   assert.match(html, /让想象/);
   assert.match(html, /成为视频。/);
@@ -55,6 +56,9 @@ test("keeps bilingual copy and responsive design in the source", async () => {
   assert.match(page, /const navTargets = \["about", "capabilities", "services", "contact"\]/);
   assert.match(layout, /SAIFU｜AI 视频生成工具与应用开发/);
   assert.match(css, /@media \(max-width: 620px\)/);
+  assert.match(css, /SpaceGrotesk-Variable\.woff2/);
+  assert.match(css, /MiSans-Regular\.woff2/);
+  assert.doesNotMatch(css, /Instrument Serif/);
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.match(packageJson, /"name": "saifu-ai-video-website"/);
 });
