@@ -454,6 +454,11 @@ a:focus-visible {
   letter-spacing: -0.025em;
 }
 
+.about-title-warp.warp-text {
+  height: clamp(190px, 17vw, 260px);
+  min-height: 0;
+}
+
 .about-copy {
   max-width: 420px;
   padding-bottom: 8px;
@@ -1107,6 +1112,10 @@ a:focus-visible {
 
   .about h2 {
     font-size: clamp(38px, 11vw, 48px);
+  }
+
+  .about-title-warp.warp-text {
+    height: clamp(118px, 34vw, 150px);
   }
 
   .language-zh .about h2 em {

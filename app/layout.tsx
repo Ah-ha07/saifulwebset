@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1733,
         height: 908,
-        alt: "SAIFU — AI Video Tools & Applications",
+        alt: "SAIFU - AI Video Tools & Applications",
       },
     ],
   },

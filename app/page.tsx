@@ -11,6 +11,7 @@ import {
   X,
 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import WarpText from "./components/WarpText";
 
 const HERO_VIDEO =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4";
@@ -85,7 +86,7 @@ const copy = {
     approachLabel: "Our approach",
     approachTitle: "From an idea to video you can actually use.",
     approachBody:
-      "We design AI video generation and editing workflows around visual quality, style consistency, efficiency, and creative control—then turn them into complete product experiences.",
+      "We design AI video generation and editing workflows around visual quality, style consistency, efficiency, and creative control, then turn them into complete product experiences.",
     revealHint: "Move to reveal the result",
     philosophyTitleA: "AI Video",
     philosophyTitleB: "Product Development",
@@ -439,8 +440,28 @@ export default function Home() {
       <section className="about section-shell" id="about">
         <motion.div className="section-label" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>{t.aboutLabel}</motion.div>
         <div className="about-grid">
-          <motion.h2 initial={{ opacity: 0, y: 42 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: .85, ease: [0.16, 1, 0.3, 1] }}>
-            {t.aboutLead}<br /><em className="display-accent">{t.aboutAccent}</em>
+          <motion.h2 className="about-title" initial={{ opacity: 0, y: 42 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: .85, ease: [0.16, 1, 0.3, 1] }}>
+            <WarpText
+              className="about-title-warp"
+              text={`${t.aboutLead}\n${t.aboutAccent}`}
+              color="#f2f0e9"
+              activation="hover"
+              warpStrength={0.08}
+              warpScale={1.7}
+              speed={0.55}
+              pointerInfluence={0.42}
+              pointerStrength={0.38}
+              refraction={0.018}
+              ripple
+              fontSize={
+                language === "zh"
+                  ? "clamp(2.375rem, 7vw, 6.5rem)"
+                  : "clamp(1.875rem, 4.8vw, 4.625rem)"
+              }
+              fontWeight={600}
+              letterSpacing={language === "zh" ? "-0.04em" : "-0.05em"}
+              lineHeight={1.02}
+            />
           </motion.h2>
           <motion.div className="about-copy" initial={{ opacity: 0, y: 34 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: .75, delay: .12 }}>
             <p>{t.aboutBody}</p><p>{t.aboutBody2}</p>

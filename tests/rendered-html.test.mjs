@@ -42,10 +42,21 @@ test("server-renders the SAIFU company website", async () => {
 });
 
 test("keeps bilingual copy, SEO metadata, and responsive design in the source", async () => {
-  const [page, layout, css, packageJson, robots, sitemap] = await Promise.all([
+  const [
+    page,
+    layout,
+    css,
+    warpTextSource,
+    warpTextCss,
+    packageJson,
+    robots,
+    sitemap,
+  ] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../app/components/WarpText.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/components/WarpText.css", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     readFile(new URL("../public/robots.txt", import.meta.url), "utf8"),
     readFile(new URL("../public/sitemap.xml", import.meta.url), "utf8"),
@@ -66,6 +77,17 @@ test("keeps bilingual copy, SEO metadata, and responsive design in the source", 
   assert.match(css, /MiSans-Regular\.woff2/);
   assert.doesNotMatch(css, /Instrument Serif/);
   assert.match(css, /prefers-reduced-motion: reduce/);
+  assert.match(warpTextCss, /white-space:\s*pre;/);
+  assert.doesNotMatch(warpTextCss, /white-space:\s*pre-line;/);
+  assert.match(
+    warpTextCss,
+    /font-size:\s*calc\(1em \* var\(--warp-fit, 1\)\);/,
+  );
+  assert.match(warpTextSource, /const fit = Math\.min\(1,/);
+  assert.match(
+    warpTextSource,
+    /style\.setProperty\("--warp-fit", String\(fit\)\)/,
+  );
   assert.match(packageJson, /"name": "saifu-ai-video-website"/);
   assert.match(robots, /Sitemap: https:\/\/saifuliqi\.com\/sitemap\.xml/);
   assert.match(sitemap, /<loc>https:\/\/saifuliqi\.com\/<\/loc>/);
