@@ -23,6 +23,7 @@ const TOOL_VIDEO =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4";
 const APPLICATION_VIDEO =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4";
+const NAV_TARGETS = ["about", "capabilities", "services", "contact"] as const;
 
 type Language = "zh" | "en";
 
@@ -353,26 +354,73 @@ function ServiceCard({
 export default function Home() {
   const [language, setLanguage] = useState<Language>("zh");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
+  const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
   const t = copy[language];
-  const navTargets = ["about", "capabilities", "services", "contact"];
+
+  useEffect(() => {
+    const hero = document.getElementById("top");
+    const sections = NAV_TARGETS.map((target) =>
+      document.getElementById(target),
+    ).filter((section): section is HTMLElement => section !== null);
+
+    const heroObserver = new IntersectionObserver(
+      ([entry]) => {
+        setIsHeaderScrolled(
+          !entry.isIntersecting || entry.intersectionRatio < 0.55,
+        );
+      },
+      { threshold: [0, 0.55, 1] },
+    );
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        const current = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (first, second) =>
+              first.boundingClientRect.top - second.boundingClientRect.top,
+          )[0];
+
+        if (current) setActiveSection(current.target.id);
+      },
+      { rootMargin: "-28% 0px -56% 0px", threshold: 0 },
+    );
+
+    if (hero) heroObserver.observe(hero);
+    sections.forEach((section) => sectionObserver.observe(section));
+
+    return () => {
+      heroObserver.disconnect();
+      sectionObserver.disconnect();
+    };
+  }, []);
 
   return (
     <main className={`site language-${language}`}>
-      <header className="site-nav liquid-glass">
+      <header
+        className={`site-nav liquid-glass${isHeaderScrolled ? " is-scrolled" : ""}`}
+      >
         <a className="brand" href="#top" aria-label="Saifu home">
           <img className="brand-mark" src="/saifu-mark.svg" alt="" aria-hidden="true" />
           <strong>SAIFU</strong>
         </a>
         <nav className="nav-links" aria-label="Primary navigation">
           {t.nav.map((item, index) => (
-            <a key={navTargets[index]} href={`#${navTargets[index]}`}>{item}</a>
+            <a
+              key={NAV_TARGETS[index]}
+              className={activeSection === NAV_TARGETS[index] ? "active" : undefined}
+              href={`#${NAV_TARGETS[index]}`}
+              aria-current={activeSection === NAV_TARGETS[index] ? "location" : undefined}
+            >
+              {item}
+            </a>
           ))}
         </nav>
         <div className="nav-actions">
           <div className="language-switch" aria-label="Choose language">
-            <button className={language === "zh" ? "active" : ""} onClick={() => setLanguage("zh")}>中</button>
+            <button type="button" className={language === "zh" ? "active" : ""} onClick={() => setLanguage("zh")}>中</button>
             <i />
-            <button className={language === "en" ? "active" : ""} onClick={() => setLanguage("en")}>EN</button>
+            <button type="button" className={language === "en" ? "active" : ""} onClick={() => setLanguage("en")}>EN</button>
           </div>
           <a className="nav-cta" href="#contact">{language === "zh" ? "合作" : "Partner"}</a>
           <button
@@ -387,11 +435,36 @@ export default function Home() {
       </header>
 
       {menuOpen && (
-        <div className="mobile-menu liquid-glass">
-          {t.nav.map((item, index) => (
-            <a key={navTargets[index]} href={`#${navTargets[index]}`} onClick={() => setMenuOpen(false)}>{item}</a>
-          ))}
-        </div>
+        <nav
+          className="mobile-menu liquid-glass"
+          aria-label={language === "zh" ? "移动端导航" : "Mobile navigation"}
+        >
+          <div className="mobile-menu-links">
+            {t.nav.map((item, index) => (
+              <a
+                key={NAV_TARGETS[index]}
+                className={activeSection === NAV_TARGETS[index] ? "active" : undefined}
+                href={`#${NAV_TARGETS[index]}`}
+                aria-current={activeSection === NAV_TARGETS[index] ? "location" : undefined}
+                onClick={() => setMenuOpen(false)}
+              >
+                {item}
+              </a>
+            ))}
+          </div>
+          <div className="mobile-menu-contact">
+            <a className="mobile-menu-email" href="mailto:hello@saifuliqi.com">
+              hello@saifuliqi.com
+            </a>
+            <a
+              className="mobile-menu-cta"
+              href="#contact"
+              onClick={() => setMenuOpen(false)}
+            >
+              {t.contactCta}<ArrowUpRight size={17} />
+            </a>
+          </div>
+        </nav>
       )}
 
       <section className="hero" id="top">
@@ -510,13 +583,46 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <footer className="footer section-shell">
-        <div className="brand" aria-label="SAIFU">
-          <img className="brand-mark" src="/saifu-mark.svg" alt="" aria-hidden="true" />
-          <strong>SAIFU</strong>
+      <footer className="footer section-shell" id="footer">
+        <div className="footer-main">
+          <div className="footer-identity">
+            <a className="brand" href="#top" aria-label="SAIFU home">
+              <img className="brand-mark" src="/saifu-mark.svg" alt="" aria-hidden="true" />
+              <strong>SAIFU</strong>
+            </a>
+            <p>
+              {language === "zh"
+                ? "AI 视频工具与应用开发"
+                : "AI video tools and application development"}
+            </p>
+          </div>
+          <nav
+            className="footer-nav"
+            aria-label={language === "zh" ? "页尾导航" : "Footer navigation"}
+          >
+            <span>{language === "zh" ? "站内导航" : "Navigation"}</span>
+            <div>
+              {t.nav.map((item, index) => (
+                <a key={NAV_TARGETS[index]} href={`#${NAV_TARGETS[index]}`}>
+                  {item}
+                </a>
+              ))}
+            </div>
+          </nav>
+          <div className="footer-contact">
+            <span>{language === "zh" ? "项目合作" : "Start a project"}</span>
+            <a className="footer-email" href="mailto:hello@saifuliqi.com">
+              hello@saifuliqi.com
+            </a>
+            <a className="footer-project" href="mailto:hello@saifuliqi.com">
+              {t.contactCta}<ArrowUpRight size={16} />
+            </a>
+          </div>
         </div>
-        <p>© 2026 北京赛蚨里奇科技有限公司 · Beijing Saifuliqi Technology Co., Ltd.</p>
-        <a href="#top">BACK TO TOP <ArrowUpRight size={15} /></a>
+        <div className="footer-meta">
+          <p>© 2026 北京赛蚨里奇科技有限公司 · Beijing Saifuliqi Technology Co., Ltd.</p>
+          <a href="#top">BACK TO TOP <ArrowUpRight size={15} /></a>
+        </div>
       </footer>
     </main>
   );

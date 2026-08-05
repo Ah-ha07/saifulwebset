@@ -38,6 +38,8 @@ test("server-renders the SAIFU company website", async () => {
   assert.match(html, /成为视频。/);
   assert.match(html, /id="capabilities"/);
   assert.match(html, /id="services"/);
+  assert.match(html, /class="footer-main"/);
+  assert.match(html, /hello@saifuliqi\.com/);
   assert.match(html, /北京赛蚨里奇科技有限公司/);
 });
 
@@ -66,7 +68,9 @@ test("keeps bilingual copy, SEO metadata, and responsive design in the source", 
   assert.match(page, /Turn imagination/);
   assert.match(page, /What we build with AI video/);
   assert.match(page, /Custom AI Video Applications/);
-  assert.match(page, /const navTargets = \["about", "capabilities", "services", "contact"\]/);
+  assert.match(page, /const NAV_TARGETS = \["about", "capabilities", "services", "contact"\] as const/);
+  assert.match(page, /aria-current=/);
+  assert.doesNotMatch(page, /ICP备案|公安备案/);
   assert.match(layout, /SAIFU｜AI 视频生成工具与应用开发/);
   assert.match(layout, /https:\/\/saifuliqi\.com/);
   assert.match(layout, /Organization/);
