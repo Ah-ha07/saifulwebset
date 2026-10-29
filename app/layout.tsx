@@ -52,7 +52,7 @@ export const metadata: Metadata = {
       "SAIFU 专注 AI 视频生成工具、AI 视频应用与定制开发，为创作者、团队和企业打造真正可用的 AI 视频产品。",
     images: [
       {
-        url: "/og.png",
+        url: "/og.png?v=dream-keeper-a",
         width: 1733,
         height: 908,
         alt: "SAIFU - AI Video Tools & Applications",
@@ -64,10 +64,10 @@ export const metadata: Metadata = {
     title: "SAIFU｜AI 视频生成工具与应用开发",
     description:
       "AI 视频生成工具、AI 视频应用与定制开发。",
-    images: ["/og.png"],
+    images: ["/og.png?v=dream-keeper-a"],
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: "/favicon.svg?v=dream-keeper-a",
   },
 };
 
@@ -79,7 +79,7 @@ const organizationJsonLd = {
   legalName: "北京赛蚨里奇科技有限公司",
   alternateName: ["赛蚨里奇", "Beijing Saifuliqi Technology Co., Ltd."],
   url: siteUrl,
-  logo: `${siteUrl}/favicon.svg`,
+  logo: `${siteUrl}/saifu-mark-purple.svg`,
   description:
     "SAIFU 专注 AI 视频生成工具、AI 视频应用与定制开发，为创作者、团队和企业打造真正可用的 AI 视频产品。",
   email: "hello@saifuliqi.com",

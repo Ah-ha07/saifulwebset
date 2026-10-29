@@ -33,7 +33,7 @@ npm test
 
 - Chinese: MiSans Regular and Semibold, self-hosted under the [MiSans Fonts Intellectual Property License Agreement](https://hyperos.mi.com/font/en/download/). This website uses MiSans.
 - Latin: Space Grotesk Variable, self-hosted under the SIL Open Font License 1.1. The license text is included at `public/fonts/SpaceGrotesk-OFL.txt`.
-- Logo: the SAIFU frame-motion symbol is stored as a production SVG at `public/saifu-mark.svg`.
+- Logo: the approved Dream Keeper A symbol is stored as a production SVG at `public/saifu-mark.svg` (light purple for dark backgrounds), with the primary purple version at `public/saifu-mark-purple.svg`. Both are traced from the approved artwork at `brand-concepts/approved/dream-keeper-A.png`; the matching browser icon is `public/favicon.svg`.
 
 ## Company
 
