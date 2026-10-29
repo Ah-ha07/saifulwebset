@@ -1,10 +1,11 @@
 import JsonLd from "./JsonLd";
-import { faq, guide, services } from "../lib/content";
+import { faq, guide, productionOfferings, services } from "../lib/content";
 import { companyName, localPath, pageData, siteUrl, type Language } from "../lib/site";
 
 function Shell({ language, path, title, children }: { language: Language; path: string; title: string; children: React.ReactNode }) {
   const zh = language === "zh";
   const links = [
+    ...productionOfferings.map(item => [`/services/${item.slug}`, item[language].title]),
     ["/services/ai-video-tools", zh ? "AI 视频工具开发" : "AI video tools"],
     ["/services/custom-ai-video-applications", zh ? "定制应用开发" : "Custom applications"],
     ["/guides/planning-an-ai-video-project", zh ? "项目规划指南" : "Project planning guide"],
@@ -14,8 +15,8 @@ function Shell({ language, path, title, children }: { language: Language; path: 
     <header className="document-header section-shell">
       <a className="brand" href={localPath(language)} aria-label={zh ? "SAIFU 首页" : "SAIFU home"}><img className="brand-mark" src="/saifu-mark.svg" alt="" aria-hidden="true" /><strong>SAIFU</strong></a>
       <nav className="document-nav" aria-label={zh ? "主要导航" : "Main navigation"}>
-        <a href={localPath(language, "/services/ai-video-tools")}>{zh ? "工具开发" : "AI video tools"}</a>
-        <a href={localPath(language, "/services/custom-ai-video-applications")}>{zh ? "定制应用" : "Custom applications"}</a>
+        <a href={`${localPath(language)}#services`}>{zh ? "制作服务" : "Production services"}</a>
+        <a href={localPath(language, "/services/ai-video-tools")}>{zh ? "开发服务" : "Development"}</a>
         <a href="mailto:hello@saifuliqi.com">{zh ? "讨论项目" : "Discuss a project"}</a>
       </nav>
       <div className="language-switch" aria-label={zh ? "选择语言" : "Choose language"}>
@@ -27,7 +28,7 @@ function Shell({ language, path, title, children }: { language: Language; path: 
       <nav className="document-breadcrumb" aria-label={zh ? "面包屑导航" : "Breadcrumb"}><a href={localPath(language)}>{zh ? "首页" : "Home"}</a><span aria-hidden="true">/</span><span aria-current="page">{title}</span></nav>
       {children}
       <aside className="document-related" aria-labelledby="related-heading"><h2 id="related-heading">{zh ? "继续了解" : "Explore more"}</h2><div>{links.filter(([p]) => p !== path).map(([p, text]) => <a key={p} href={localPath(language, p)}>{text}<span aria-hidden="true">↗</span></a>)}</div></aside>
-      <section className="document-cta"><span className="section-label">{zh ? "开始合作" : "START A CONVERSATION"}</span><h2>{zh ? "把你的应用场景，讲给我们听。" : "Tell us what your video workflow needs."}</h2><p>{zh ? "介绍目标用户、现有流程与期望的结果，我们一起明确第一步要验证什么。" : "Share the user, the current process and the intended result. We can discuss what to validate first."}</p><a href="mailto:hello@saifuliqi.com">hello@saifuliqi.com <span aria-hidden="true">↗</span></a></section>
+      <section className="document-cta"><span className="section-label">{zh ? "开始合作" : "START A CONVERSATION"}</span><h2>{zh ? "把你想做的，讲给我们听。" : "Tell us what you would like to create."}</h2><p>{zh ? "带上想法、脚本、参考片或产品需求，我们一起讨论制作与开发范围，以及项目报价。" : "Bring an idea, script, reference film or product brief. We can discuss the production or development scope and a quote."}</p><a href="mailto:hello@saifuliqi.com">hello@saifuliqi.com <span aria-hidden="true">↗</span></a></section>
     </main>
     <footer className="document-footer section-shell"><a className="brand" href={localPath(language)}><img className="brand-mark" src="/saifu-mark.svg" alt="" aria-hidden="true" /><strong>SAIFU</strong></a><p>© 2026 {companyName}<br />Beijing Saifuliqi Technology Co., Ltd.</p><a href={localPath(language, "/faq")}>{zh ? "项目合作常见问题" : "Project FAQ"}</a></footer>
   </div>;
@@ -59,15 +60,15 @@ export function ServicePage({ language, slug }: { language: Language; slug: stri
 }
 
 export const faqMeta = {
-  zh: { title: "AI 视频开发与项目合作常见问题｜SAIFU 赛蚨里奇", description: "了解赛蚨里奇的 AI 视频工具开发、定制应用、现有产品集成、项目准备、价格与周期评估方式，以及如何联系 SAIFU 讨论合作。" },
-  en: { title: "AI Video Development & Project FAQ | SAIFU", description: "Answers about SAIFU's AI video tool development, custom applications, integration, project preparation, costs, timelines and how to discuss a project." },
+  zh: { title: "AI 视频制作、开发与项目咨询常见问题｜SAIFU", description: "了解 AI 漫剧、短剧、视频和广告制作的合作方式，以及工具与定制应用开发。查看项目准备、报价与周期问题，欢迎联系赛蚨里奇咨询。" },
+  en: { title: "AI Video Production & Development FAQ | SAIFU", description: "Answers about AI comic series, short dramas, videos, ads and application development: what to prepare, how project quotes work and how to contact SAIFU." },
 };
 
 export function FaqPage({ language }: { language: Language }) {
   const copy = faqMeta[language];
   return <Shell language={language} path="/faq" title={language === "zh" ? "常见问题" : "FAQ"}>
     <StructuredPage language={language} path="/faq" title={copy.title} description={copy.description} />
-    <div className="document-hero"><span className="section-label">{language === "zh" ? "项目合作" : "WORKING WITH SAIFU"}</span><h1>{language === "zh" ? "AI 视频开发与合作，常见问题。" : "AI video development: common questions."}</h1><p>{language === "zh" ? "从服务范围到项目准备，先回答开始合作前最常见的几个问题。" : "Service scope, project preparation and the questions that help a collaboration start clearly."}</p></div>
+    <div className="document-hero"><span className="section-label">{language === "zh" ? "项目合作" : "WORKING WITH SAIFU"}</span><h1>{language === "zh" ? "制作与开发，欢迎来聊。" : "Production and development: your questions."}</h1><p>{language === "zh" ? "AI 漫剧、短剧、视频、广告与应用开发，从服务范围到项目准备，先回答开始合作前的常见问题。" : "AI comic series, short dramas, videos, ads and applications: service scope, preparation and the questions that help a collaboration start clearly."}</p></div>
     <div className="document-faq">{faq[language].map(item => <section key={item.question}><h2>{item.question}</h2><p>{item.answer}</p></section>)}</div>
   </Shell>;
 }

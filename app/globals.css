@@ -1553,3 +1553,20 @@ a:focus-visible {
   .document-footer { flex-wrap: wrap; justify-content: flex-start; gap: 24px; }
   .document-footer p { width: 100%; order: 3; }
 }
+
+.production-intro { max-width: 780px; margin: 0 0 36px; color: #b5afbf; font-size: 17px; line-height: 1.9; }
+.services-header { gap: 30px; }
+.services-header h2 { max-width: 17ch; font-size: clamp(44px, 6vw, 84px); line-height: 1.08; text-wrap: balance; }
+.services-header > span { flex: none; white-space: nowrap; line-height: 1.7; }
+.production-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.production-card { display: flex; flex-direction: column; min-height: 310px; padding: 27px 24px; border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(150deg, rgba(116, 65, 181, .12), rgba(255, 255, 255, .015) 70%); transition: border-color 250ms ease, transform 250ms ease; }
+.production-card:hover { border-color: #c6a0f2; transform: translateY(-4px); }
+.production-number { color: #c6a0f2; font: 12px "Space Grotesk", sans-serif; letter-spacing: .12em; }
+.production-card h3 { margin: 36px 0 15px; font-size: clamp(21px, 1.9vw, 27px); line-height: 1.35; font-weight: 500; letter-spacing: -.025em; }
+.production-card > p { margin: 0 0 27px; color: #a8a1b2; font-size: 14px; line-height: 1.85; }
+.production-card-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; color: #c6a0f2; font-size: 12px; }
+.development-heading { margin: 65px 0 26px; }
+.development-heading h3 { margin: 0 0 15px; font-size: clamp(24px, 3vw, 35px); font-weight: 500; letter-spacing: -.03em; }
+.development-heading p { color: var(--muted); font-size: 15px; line-height: 1.8; }
+@media (max-width: 1000px) { .production-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .production-grid { grid-template-columns: 1fr; } .production-card { min-height: 240px; padding: 25px; } .production-card h3 { margin-top: 25px; font-size: 26px; } .production-intro { font-size: 16px; } .services-header { flex-direction: column; align-items: flex-start; gap: 18px; margin-bottom: 27px; } .services-header h2 { font-size: clamp(38px, 10vw, 46px); } .services-header > span { max-width: 24ch; line-height: 1.7; } }

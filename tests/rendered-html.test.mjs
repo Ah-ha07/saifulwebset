@@ -31,7 +31,7 @@ test("server-renders the Chinese company homepage with crawlable service links",
   const html = await response.text();
   assert.match(html, /<html lang="zh-CN"/);
   assert.match(html, /class="site language-zh"/);
-  assert.equal(seo(html).title, "AI 视频工具与定制应用开发｜赛蚨里奇 SAIFU");
+  assert.equal(seo(html).title, "AI 漫剧、短剧、视频与广告制作｜赛蚨里奇 SAIFU");
   assert.match(html, /src="\/saifu-mark\.svg"/);
   assert.match(html, /让想象/);
   assert.match(html, /成为视频。/);
@@ -42,6 +42,11 @@ test("server-renders the Chinese company homepage with crawlable service links",
   assert.match(html, /href="\/en"[^>]*hrefLang="en"/i);
   assert.match(html, /北京赛蚨里奇科技有限公司/);
   assert.match(html, /hello@saifuliqi\.com/);
+  for (const slug of ["ai-comic-series", "ai-short-dramas", "ai-video-production", "ai-ad-production"]) {
+    assert.ok(html.includes(`href="/services/${slug}"`), `Missing commissioned service ${slug}`);
+  }
+  assert.match(html, /四类制作业务均接受委托/);
+  assert.match(html, /<meta name="google-site-verification" content="j_DuvBLdaly267Sro5sH49oz0fj0Wvg5c8J1_VFbpis"\//);
 });
 
 test("the English homepage is English before JavaScript runs", async () => {
@@ -53,7 +58,7 @@ test("the English homepage is English before JavaScript runs", async () => {
   assert.match(html, /Turn imagination/);
   assert.match(html, /into video\./);
   assert.match(html, /href="\/en\/services\/ai-video-tools"/);
-  assert.equal(seo(html).title, "AI Video Tools &amp; Custom Application Development | SAIFU");
+  assert.equal(seo(html).title, "AI Video, Comic Series &amp; Ad Production | SAIFU");
   // English must never collapse into the Chinese canonical URL.
   assert.equal(seo(html).canonicals[0]?.href, "https://saifuliqi.com/en");
 });
@@ -61,8 +66,8 @@ test("the English homepage is English before JavaScript runs", async () => {
 test("all sitemap pages render unique metadata, reciprocal language links and valid schemas", async () => {
   const sitemap = await readFile(new URL("../public/sitemap.xml", import.meta.url), "utf8");
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
-  assert.equal(urls.length, 10);
-  assert.equal(new Set(urls).size, 10);
+  assert.equal(urls.length, 18);
+  assert.equal(new Set(urls).size, 18);
   const titles = new Set();
   const descriptions = new Set();
   for (const url of urls) {
@@ -101,7 +106,7 @@ test("all sitemap pages render unique metadata, reciprocal language links and va
       assert.match(html, /dateTime="2026-10-29"/i);
     }
   }
-  assert.equal([...sitemap.matchAll(/hreflang="en"/g)].length, 10);
+  assert.equal([...sitemap.matchAll(/hreflang="en"/g)].length, 18);
 });
 
 test("unknown service slugs return 404 instead of indexable placeholder pages", async () => {

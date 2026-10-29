@@ -2,7 +2,338 @@ import type { Language } from "./site";
 
 type Section = { heading: string; paragraphs: string[]; points?: string[] };
 export type ServiceCopy = { title: string; description: string; eyebrow: string; heading: string; lead: string; sections: Section[] };
+const productionDetails: Record<string, Record<Language, ServiceCopy>> = {
+  "ai-comic-series": {
+    "zh": {
+      "title": "AI 漫剧制作与项目合作｜赛蚨里奇 SAIFU",
+      "description": "承接 AI 漫剧制作项目，围绕故事、角色与画面风格沟通分镜、动态画面、配音和剪辑。欢迎提供想法、脚本或参考片，向赛蚨里奇咨询合作与报价。",
+      "eyebrow": "AI 漫剧制作",
+      "heading": "把你的故事，做成 AI 漫剧。",
+      "lead": "我们承接 AI 漫剧制作，围绕故事、角色与视觉风格组织画面和节奏。只有一个创意也欢迎来聊，先一起明确作品想讲什么、想给谁看。",
+      "sections": [
+        {
+          "heading": "从故事与角色开始",
+          "paragraphs": [
+            "可以从故事梗概、已有脚本、角色设定或参考片开始沟通。连载内容需要明确人物关系、每集的故事推进，以及画面风格和角色外观中需要保持一致的部分。"
+          ],
+          "points": [
+            "漫画风格的剧情短片与系列内容。",
+            "角色故事、设定展示与内容试制。",
+            "围绕已有创意讨论单集或多集制作。"
+          ]
+        },
+        {
+          "heading": "一起确定制作范围",
+          "paragraphs": [
+            "项目可围绕脚本整理、分镜、画面制作、动态处理、配音与剪辑讨论具体分工。你已经完成的素材也可以作为起点，制作环节按实际需求约定。",
+            "开始前先明确风格参考、关键角色与样片要求，再沟通成片时长、集数、声音和修改方式。较长系列可以先讨论一段试制内容。"
+          ]
+        },
+        {
+          "heading": "欢迎咨询与询价",
+          "paragraphs": [
+            "发来作品方向、预期时长或集数、参考风格、发布用途，以及时间和预算要求，就可以开始讨论。尚未确定这些信息时，也欢迎先介绍故事想法。",
+            "项目报价与交付安排会结合制作范围确认。联系 hello@saifuliqi.com，告诉我们你想做的漫剧。"
+          ]
+        }
+      ]
+    },
+    "en": {
+      "title": "AI Comic Series Production & Commissions | SAIFU",
+      "description": "Commission AI comic-style videos and animated series. Discuss stories, characters, visual direction, storyboards, voiceover and editing with SAIFU. Project inquiries welcome.",
+      "eyebrow": "AI COMIC SERIES PRODUCTION",
+      "heading": "Bring your story to life as an AI comic series.",
+      "lead": "SAIFU accepts commissions for AI comic-style videos and episodic stories. Start with an idea, script, character concept or reference film, and discuss how the story should look and feel.",
+      "sections": [
+        {
+          "heading": "Begin with the story and characters",
+          "paragraphs": [
+            "A story outline, existing script, character brief or visual reference can start the conversation. For a series, define the relationships, each episode’s progression and the character and visual details that need continuity."
+          ],
+          "points": [
+            "Comic-style narrative shorts and episodic content.",
+            "Character stories, concept films and production trials.",
+            "Single episodes or a series scoped around an existing idea."
+          ]
+        },
+        {
+          "heading": "Agree on the production scope",
+          "paragraphs": [
+            "Script development, storyboarding, image creation, motion, voiceover and editing can be discussed as part of the project. Existing assets can provide a starting point, with responsibilities agreed around your needs.",
+            "Clarify the references, main characters and sample requirements before setting length, episode count, sound and revision scope. A longer series can start with a short production trial."
+          ]
+        },
+        {
+          "heading": "Project inquiries are welcome",
+          "paragraphs": [
+            "Share the story, intended length or episode count, visual references, distribution use and any schedule or budget constraints. If those details are still open, begin with the idea.",
+            "Pricing and delivery are discussed for the agreed production scope. Email hello@saifuliqi.com to introduce your comic series project."
+          ]
+        }
+      ]
+    }
+  },
+  "ai-short-dramas": {
+    "zh": {
+      "title": "AI 短剧制作与剧情短片定制｜赛蚨里奇 SAIFU",
+      "description": "承接 AI 短剧与剧情短片制作，围绕故事、角色、分镜、声音和剪辑沟通成片方案。欢迎带着创意、脚本或参考片，咨询赛蚨里奇项目合作。",
+      "eyebrow": "AI 短剧制作",
+      "heading": "让一个好故事，成为一部 AI 短剧。",
+      "lead": "我们承接 AI 短剧和剧情短片制作，围绕故事冲突、人物关系与镜头节奏，把想法逐步推进为可以观看的作品。",
+      "sections": [
+        {
+          "heading": "先讲清楚故事给谁看",
+          "paragraphs": [
+            "可以从一句创意、故事梗概或完整脚本开始。先明确受众、题材、人物关系和情绪重点，再讨论单条剧情短片或连续短剧的制作方式。"
+          ],
+          "points": [
+            "剧情短片与短剧项目。",
+            "系列内容的概念片、预告与试制片段。",
+            "围绕品牌或主题创作的叙事内容。"
+          ]
+        },
+        {
+          "heading": "让镜头与声音服务叙事",
+          "paragraphs": [
+            "制作范围可覆盖脚本与分镜沟通、角色和场景视觉、AI 画面、声音设计与剪辑。不同故事对角色连续性、动作、对白和镜头连接的要求不同，需要结合样例确定。",
+            "开工前约定画面风格、片长、集数、配音需求和审片节点，让故事方向与制作范围尽早对齐。"
+          ]
+        },
+        {
+          "heading": "从一个想法开始咨询",
+          "paragraphs": [
+            "欢迎发送题材方向、故事简介、目标片长、参考作品与发布用途。已有剧本、角色设定或分镜时，也可以一起提供。",
+            "报价、周期和修改范围根据具体项目讨论。发送邮件至 hello@saifuliqi.com，我们一起把下一步制作计划讲清楚。"
+          ]
+        }
+      ]
+    },
+    "en": {
+      "title": "AI Short Drama & Narrative Film Production | SAIFU",
+      "description": "Commission AI short dramas and narrative films with SAIFU. Discuss stories, characters, storyboards, sound and editing from an idea, script or visual reference.",
+      "eyebrow": "AI SHORT DRAMA PRODUCTION",
+      "heading": "Turn a story idea into an AI short drama.",
+      "lead": "SAIFU accepts short drama and narrative film projects, developing the story, characters and visual rhythm into a watchable film. An initial idea is enough to begin a conversation.",
+      "sections": [
+        {
+          "heading": "Start with the audience and story",
+          "paragraphs": [
+            "Bring a one-line idea, outline or complete script. Define the audience, genre, relationships and emotional focus before discussing a standalone narrative short or an episodic project."
+          ],
+          "points": [
+            "Short dramas and narrative films.",
+            "Concept films, trailers and production trials for a series.",
+            "Story-led content built around a brand or theme."
+          ]
+        },
+        {
+          "heading": "Put picture and sound behind the story",
+          "paragraphs": [
+            "The project scope can include script and storyboard discussion, character and scene direction, AI-generated footage, sound and editing. Continuity, action, dialogue and scene transitions need to be assessed against the intended story.",
+            "Agree on visual style, length, episode count, voiceover needs and review stages before production begins."
+          ]
+        },
+        {
+          "heading": "Bring an idea or a script",
+          "paragraphs": [
+            "Send the genre, story outline, intended length, reference films and distribution use. Include an existing script, character brief or storyboard if available.",
+            "Pricing, timing and revision scope are agreed for the project. Email hello@saifuliqi.com to discuss your short drama."
+          ]
+        }
+      ]
+    }
+  },
+  "ai-video-production": {
+    "zh": {
+      "title": "AI 视频制作与创意短片定制｜赛蚨里奇 SAIFU",
+      "description": "承接 AI 视频制作、创意短片、品牌内容与产品介绍视频。赛蚨里奇可从想法、脚本或已有素材出发沟通制作方案，欢迎咨询项目与报价。",
+      "eyebrow": "AI 视频制作",
+      "heading": "有一段视频想做？从这里开始。",
+      "lead": "我们承接 AI 视频制作与创意内容项目，可以从想法、脚本、参考片或已有素材开始，讨论适合表达目的的画面、声音与节奏。",
+      "sections": [
+        {
+          "heading": "围绕视频的用途确定表达",
+          "paragraphs": [
+            "产品介绍、品牌内容、知识表达与创意短片，对信息密度和观看节奏有不同要求。先说清楚视频给谁看、要传达什么，以及在哪里使用，才能选择合适的制作方式。"
+          ],
+          "points": [
+            "品牌与产品介绍视频。",
+            "创意短片、主题内容与视觉概念片。",
+            "围绕已有素材讨论新的视频表达。"
+          ]
+        },
+        {
+          "heading": "按需求组合制作环节",
+          "paragraphs": [
+            "脚本、分镜、视觉风格、AI 画面、配音、声音与剪辑可以根据项目需要沟通分工。你可以委托一段完整视频，也可以先说明希望我们参与的环节。",
+            "片长、横竖版、画面比例、字幕语言、音乐与交付文件需要在制作前确定；具体规格按项目约定。"
+          ]
+        },
+        {
+          "heading": "欢迎带着不完整的想法来聊",
+          "paragraphs": [
+            "准备好用途、受众、参考风格、目标时长和时间要求，就能开始讨论。暂时没有脚本时，可以先告诉我们你最想表达的一句话。",
+            "我们会根据实际制作范围讨论报价与合作安排。项目咨询邮箱：hello@saifuliqi.com。"
+          ]
+        }
+      ]
+    },
+    "en": {
+      "title": "AI Video Production & Creative Video Commissions | SAIFU",
+      "description": "Commission AI videos, creative films, brand content and product videos with SAIFU. Start with an idea, script, references or existing assets. Project inquiries welcome.",
+      "eyebrow": "AI VIDEO PRODUCTION",
+      "heading": "Have a video in mind? Let’s make it happen.",
+      "lead": "SAIFU accepts AI video and creative content commissions. Bring an idea, script, reference film or existing assets, and discuss the picture, sound and pacing that fit your message.",
+      "sections": [
+        {
+          "heading": "Build the film around its purpose",
+          "paragraphs": [
+            "Product introductions, brand stories, explainers and creative shorts each need a different balance of information and pacing. Define the audience, the message and where the video will be used before choosing the approach."
+          ],
+          "points": [
+            "Brand and product introduction videos.",
+            "Creative shorts, themed content and visual concept films.",
+            "New video treatments built around existing assets."
+          ]
+        },
+        {
+          "heading": "Choose the production support you need",
+          "paragraphs": [
+            "Script, storyboard, visual direction, AI footage, voiceover, sound and editing can be discussed for the project. Commission a complete video or specify the stages you would like us to handle.",
+            "Length, aspect ratio, caption language, music and delivery files should be agreed before production. Specifications depend on the brief."
+          ]
+        },
+        {
+          "heading": "An unfinished idea is welcome",
+          "paragraphs": [
+            "Share the use case, audience, references, intended length and timing. If there is no script yet, start with the one thing the film needs to communicate.",
+            "We discuss pricing and the collaboration around the actual production scope. Contact hello@saifuliqi.com with your project idea."
+          ]
+        }
+      ]
+    }
+  },
+  "ai-ad-production": {
+    "zh": {
+      "title": "AI 广告制作与品牌广告视频定制｜赛蚨里奇 SAIFU",
+      "description": "承接 AI 广告、品牌广告片与产品推广视频制作。从广告创意、脚本到画面与剪辑，围绕产品卖点和投放用途讨论方案，欢迎咨询合作与报价。",
+      "eyebrow": "AI 广告制作",
+      "heading": "让品牌的一个卖点，成为一支广告。",
+      "lead": "我们承接 AI 广告与产品推广视频制作，从受众、卖点和使用场景出发，讨论广告创意、画面风格与成片表达。",
+      "sections": [
+        {
+          "heading": "先明确产品与沟通目标",
+          "paragraphs": [
+            "广告制作需要先理解产品、受众、核心卖点，以及观看者看完后希望采取的行动。现有品牌资料、产品图片、落地页和参考广告都可以帮助形成清晰的创意方向。"
+          ],
+          "points": [
+            "品牌广告与产品推广视频。",
+            "社交媒体使用的广告创意与短片。",
+            "同一创意下按需求讨论不同版本与比例。"
+          ]
+        },
+        {
+          "heading": "把品牌信息带入制作流程",
+          "paragraphs": [
+            "项目可以沟通创意脚本、分镜、产品与场景视觉、AI 画面、声音和剪辑的具体分工。品牌名称、标识、产品卖点和需要准确呈现的文字，应在制作前明确。",
+            "广告用途、片长、画面比例、字幕语言、版本数量和交付要求会共同影响范围与报价，适合在初次咨询时一起说明。"
+          ]
+        },
+        {
+          "heading": "欢迎产品与品牌团队询价",
+          "paragraphs": [
+            "发送产品简介、核心卖点、受众、参考广告与使用渠道，以及预期时长和时间安排，就可以开始讨论。只有一个创意方向也欢迎联系。",
+            "项目制作与报价依据具体需求确认。咨询邮箱：hello@saifuliqi.com。"
+          ]
+        }
+      ]
+    },
+    "en": {
+      "title": "AI Ad Production & Brand Commercials | SAIFU",
+      "description": "Commission AI ads, brand commercials and product promotion videos. SAIFU welcomes briefs for creative direction, scripts, AI footage, sound and editing.",
+      "eyebrow": "AI AD PRODUCTION",
+      "heading": "Turn a product message into a brand commercial.",
+      "lead": "SAIFU accepts AI ad and product promotion video commissions. Start with the audience, selling point and intended use, then develop the creative direction and finished film.",
+      "sections": [
+        {
+          "heading": "Clarify the product and the message",
+          "paragraphs": [
+            "Define the product, audience, main selling point and the action the viewer should take. Brand materials, product images, a landing page and reference ads help establish the creative direction."
+          ],
+          "points": [
+            "Brand commercials and product promotion videos.",
+            "Ad creative and shorts for social media use.",
+            "Different versions or aspect ratios scoped around the same concept."
+          ]
+        },
+        {
+          "heading": "Bring the brand into production",
+          "paragraphs": [
+            "Creative scripts, storyboards, product and scene direction, AI footage, sound and editing can be scoped around the brief. Identify the brand name, logo, product information and on-screen text that must be represented accurately.",
+            "Use case, length, format, caption language, number of versions and delivery requirements all shape the scope and quote. Include them in the initial inquiry where possible."
+          ]
+        },
+        {
+          "heading": "Brand and product inquiries are welcome",
+          "paragraphs": [
+            "Send a product summary, selling points, audience, reference ads and distribution channels, with an intended length and schedule. An early creative direction is also welcome.",
+            "Production scope and pricing are agreed for the brief. Email hello@saifuliqi.com to discuss your ad project."
+          ]
+        }
+      ]
+    }
+  }
+};
+
+export const productionOfferings = [
+  {
+    "slug": "ai-comic-series",
+    "zh": {
+      "title": "AI 漫剧制作",
+      "summary": "角色、故事与画面风格，把灵感做成漫剧。"
+    },
+    "en": {
+      "title": "AI Comic Series Production",
+      "summary": "Character-led comic videos and episodic stories."
+    }
+  },
+  {
+    "slug": "ai-short-dramas",
+    "zh": {
+      "title": "AI 短剧制作",
+      "summary": "剧情、人物与镜头节奏，把故事做成短剧。"
+    },
+    "en": {
+      "title": "AI Short Drama Production",
+      "summary": "Narrative shorts and dramas, from idea to screen."
+    }
+  },
+  {
+    "slug": "ai-video-production",
+    "zh": {
+      "title": "AI 视频制作",
+      "summary": "品牌内容、产品介绍与创意短片，按用途定制。"
+    },
+    "en": {
+      "title": "AI Video Production",
+      "summary": "Brand content, product videos and creative films."
+    }
+  },
+  {
+    "slug": "ai-ad-production",
+    "zh": {
+      "title": "AI 广告制作",
+      "summary": "围绕品牌与产品卖点，制作广告与推广视频。"
+    },
+    "en": {
+      "title": "AI Ad Production",
+      "summary": "Ad creative and commercials built around your brand."
+    }
+  }
+];
+
 export const services: Record<string, Record<Language, ServiceCopy>> = {
+  ...productionDetails,
   "ai-video-tools": {
     zh: {
       title: "AI 视频工具开发：生成、编辑与创作工作流｜SAIFU",
@@ -55,20 +386,24 @@ export const services: Record<string, Record<Language, ServiceCopy>> = {
 
 export const faq = {
   zh: [
-    { question: "赛蚨里奇 SAIFU 是做什么的？", answer: "北京赛蚨里奇科技有限公司以 SAIFU 为品牌，专注 AI 视频工具与应用开发，结合模型能力、产品设计和软件开发，为创作者、团队和企业设计生成、编辑与工作流产品。" },
+    { question: "赛蚨里奇 SAIFU 是做什么的？", answer: "北京赛蚨里奇科技有限公司以 SAIFU 为品牌，承接 AI 漫剧、AI 短剧、AI 视频与 AI 广告制作，同时提供 AI 视频工具和定制应用开发。欢迎个人创作者、品牌与企业团队咨询项目。" },
+    { question: "AI 漫剧、短剧、视频和广告都可以委托制作吗？", answer: "可以，我们承接这四类制作项目。你可以提供想法、脚本、参考片或已有素材，先沟通作品方向、用途、时长与制作范围，再讨论报价和安排。" },
+    { question: "只有一个想法，也可以来咨询吗？", answer: "欢迎。先告诉我们你想讲的故事、想介绍的产品或视频要达到的沟通目的，再一起讨论风格、内容和适合的第一步。初次咨询无需准备完整的脚本或需求文档。" },
     { question: "AI 视频工具开发和定制应用开发有什么区别？", answer: "工具开发侧重可反复使用的生成、编辑与创作体验；定制应用开发从特定业务出发，围绕现有系统、人员交接和使用场景组织视频能力。需求存在交叉时，可以先用原型确定产品范围。" },
     { question: "已有产品可以接入 AI 视频能力吗？", answer: "可以就现有产品的具体流程讨论接入方式。需要先了解素材输入、目标视频、可用接口和审核要求，再判断适合的能力与集成范围。" },
-    { question: "开始讨论项目，需要准备什么？", answer: "建议提供目标用户、要解决的问题、一组输入素材、期望的视频样例、现有流程，以及时间与预算约束。暂时没有完整需求文档也可以，先说明一个最需要验证的场景。" },
-    { question: "项目价格和开发周期如何确定？", answer: "需要结合功能范围、现有系统、模型与处理需求、交付规格以及维护方式评估。官网没有统一的自助订阅或固定项目报价，具体费用与周期在需求沟通后约定。" },
+    { question: "开始讨论项目，需要准备什么？", answer: "制作项目可以提供想法或脚本、参考片、视频用途、目标时长和时间要求；开发项目可以补充目标用户与现有流程。只有一个初步想法也欢迎先来聊。" },
+    { question: "项目价格和开发周期如何确定？", answer: "制作费用与周期取决于时长、集数、风格、素材、配音剪辑和交付要求；开发项目还需要评估功能与集成范围。具体报价、修改范围和安排在沟通需求后约定。" },
     { question: "生成的视频一定能达到预期效果吗？", answer: "不同素材和场景的生成表现会有差异。合作前应使用代表性输入验证画面质量、风格一致性、生成耗时和可修改程度，并把可以接受的结果写入验收要求。" },
     { question: "如何联系 SAIFU？", answer: "可以发送邮件至 hello@saifuliqi.com，简要介绍你的产品、使用场景和希望改进的视频流程。官网提供中文与英文的服务介绍，便于项目沟通。" },
   ],
   en: [
-    { question: "What does SAIFU do?", answer: "SAIFU is the brand of Beijing Saifuliqi Technology Co., Ltd. We develop AI video tools and applications for creators, teams and businesses, combining model capabilities, product design and software development for generation, editing and creative workflows." },
+    { question: "What does SAIFU do?", answer: "SAIFU is the brand of Beijing Saifuliqi Technology Co., Ltd. We accept commissions for AI comic series, short dramas, videos and ads, and develop AI video tools and custom applications. Creators, brands and business teams are welcome to discuss projects." },
+    { question: "Can I commission comic series, short dramas, videos and ads?", answer: "Yes. We accept all four types of production projects. Share an idea, script, references or existing assets, then discuss the direction, use, length and production scope before agreeing on a quote and schedule." },
+    { question: "Can I ask about a project with only an early idea?", answer: "Absolutely. Tell us the story, product or message you would like to bring to the screen. We can discuss the style, content and a useful first step. A finished script or specification is not required for an initial inquiry." },
     { question: "How is tool development different from custom application development?", answer: "Tool development focuses on a reusable generation, editing or creative experience. Custom applications start from a particular business workflow, including existing systems, people and handoffs. A prototype can help define the scope when the needs overlap." },
     { question: "Can AI video be integrated into an existing product?", answer: "We can discuss an integration around your existing product. Inputs, target videos, available interfaces and review requirements need to be understood before selecting capabilities and defining the integration scope." },
-    { question: "What should I prepare for a project discussion?", answer: "Bring the intended user, the problem, representative input assets, an example of the desired video, the current workflow and any timing or budget constraints. A complete specification is not required to discuss the first scenario to validate." },
-    { question: "How are project costs and timelines determined?", answer: "They depend on features, existing systems, generation requirements, deliverables and maintenance. This company site does not publish a self-serve subscription or a fixed project price. Timing and cost are agreed after the requirements are reviewed." },
+    { question: "What should I prepare for a project discussion?", answer: "For production, bring an idea or script, references, the intended use, length and timing. For development, add the user and current workflow. An early idea is enough to start the conversation." },
+    { question: "How are project costs and timelines determined?", answer: "Production timing and pricing depend on length, episode count, style, assets, voiceover, editing and delivery. Development also depends on features and integration. Quotes, revision scope and schedules are agreed after the brief is reviewed." },
     { question: "Will generated videos always match the desired result?", answer: "Results vary by input and use case. Representative examples should be used to evaluate visual quality, consistency, processing time and editability. Acceptable outputs should be documented as part of the project criteria." },
     { question: "How can I contact SAIFU?", answer: "Email hello@saifuliqi.com with a short description of your product, use case and the video workflow you would like to improve. Our service information is available in Chinese and English." },
   ],

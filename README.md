@@ -33,7 +33,9 @@ npm test
 
 ## Search structure
 
-The site has ten canonical pages: Chinese and English versions of the homepage, two development services, the project FAQ and a project-planning guide. Language switches are ordinary links; each version has matching server-rendered language, canonical and reciprocal hreflang metadata. [SEO audit and validation record](docs/seo-audit-2026-10-29.md).
+The site has eighteen canonical pages: Chinese and English versions of the homepage, four commissioned production services, two development services, the project FAQ and a project-planning guide. Language switches are ordinary links; each version has matching server-rendered language, canonical and reciprocal hreflang metadata. [SEO audit and validation record](docs/seo-audit-2026-10-29.md).
+
+Google Search Console URL-prefix verification for `https://saifuliqi.com/` uses the persistent `verification.google` metadata in `app/lib/site.ts`. Keep this public verification value in place after ownership is verified. Submit `https://saifuliqi.com/sitemap.xml` in Search Console when updating the page inventory.
 
 ## Brand typography
 

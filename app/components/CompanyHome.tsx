@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import WarpText from "./WarpText";
-import { faq } from "../lib/content";
+import { faq, productionOfferings } from "../lib/content";
 import { localPath } from "../lib/site";
 
 const HERO_VIDEO =
@@ -35,15 +35,15 @@ const copy = {
     heroTop: "让想象",
     heroBottom: "成为视频。",
     heroBody:
-      "SAIFU 专注于 AI 视频工具与应用开发，让视频生成更简单、创作更可控，并真正服务于内容生产与业务场景。",
-    heroCta: "探索 SAIFU",
+      "赛蚨里奇 SAIFU 承接 AI 漫剧、AI 短剧、AI 视频与 AI 广告制作，也提供 AI 视频工具和定制应用开发。欢迎带着想法、脚本或参考片来咨询，一起把创意做出来。",
+    heroCta: "咨询一个项目",
     aboutLabel: "关于 SAIFU",
-    aboutLead: "我们正在构建",
-    aboutAccent: "AI 视频的新入口。",
+    aboutLead: "我们用 AI",
+    aboutAccent: "让故事变成画面。",
     aboutBody:
-      "AI 视频不只是一种新的生成方式，也是一种新的创作媒介。SAIFU 将模型能力、产品设计与软件开发结合，把快速发展的 AI 视频技术转化为清晰、好用、可以持续迭代的产品。",
+      "AI 视频是一种新的创作媒介。SAIFU 将故事、视觉创意与技术结合，制作漫剧、短剧、视频和广告，也把这些创作流程转化为好用的工具与应用。",
     aboutBody2:
-      "我们与创作者、团队和企业合作，让一个关于视频的想法，真正成为可以使用的工具与应用。",
+      "我们与个人创作者、品牌和企业团队合作。无论是一段视频，还是一款视频产品，都欢迎从一个想法开始讨论。",
     approachLabel: "我们的方法",
     approachTitle: "从一个想法，到一段真正可用的视频。",
     approachBody:
@@ -57,8 +57,8 @@ const copy = {
     storytelling: "AI 视频应用开发",
     storytellingBody:
       "从产品原型到实际应用，为创作者、团队和企业开发清晰、稳定、易于使用的 AI 视频产品。",
-    servicesTitle: "我们专注于 AI 视频",
-    servicesLabel: "业务方向",
+    servicesTitle: "把创意做出来。",
+    servicesLabel: "欢迎项目咨询",
     toolTag: "AI 视频",
     toolTitle: "AI 视频工具",
     toolBody: "面向创作者与团队，开发更易用的 AI 视频生成、编辑与工作流工具。",
@@ -67,25 +67,25 @@ const copy = {
     appBody:
       "根据具体业务场景，完成 AI 视频能力选型、产品设计、应用开发与工作流集成。",
     contactLabel: "开始合作",
-    contactTitle: "让下一个 AI 视频产品，从这里开始。",
+    contactTitle: "从一个想法，开始一段合作。",
     contactBody:
-      "无论你正在构思一款 AI 视频工具，还是希望把 AI 视频接入现有业务，我们都愿意与你一起，把想法做成真正可用的产品。",
-    contactCta: "讨论一个项目",
+      "AI 漫剧、AI 短剧、AI 视频、AI 广告，以及工具与应用开发，都欢迎咨询。告诉我们你想做什么、给谁看、希望是什么风格，我们一起讨论制作范围与报价。",
+    contactCta: "描述需求，开始咨询",
   },
   en: {
     nav: ["About", "Capabilities", "Services", "Contact"],
     heroTop: "Turn imagination",
     heroBottom: "into video.",
     heroBody:
-      "Saifu builds AI video tools and applications that make generation simpler, creation more controllable, and AI video ready for real creative and business workflows.",
-    heroCta: "Explore Saifu",
+      "SAIFU accepts commissions for AI comic series, short dramas, videos and ads. We also develop AI video tools and custom applications. Bring an idea, script or reference film, and let’s discuss your project.",
+    heroCta: "Discuss your project",
     aboutLabel: "About Saifu",
-    aboutLead: "We are building new ways",
-    aboutAccent: "to create with AI video.",
+    aboutLead: "Stories made visual.",
+    aboutAccent: "Ideas made real.",
     aboutBody:
-      "AI video is more than a new generation method. It is a new creative medium. Saifu brings together model capabilities, product design, and software development to turn fast-moving AI video technology into clear, useful, and evolving products.",
+      "AI video is a new creative medium. SAIFU combines storytelling, visual ideas and technology to produce comic series, short dramas, videos and ads, and turn creative workflows into useful tools and applications.",
     aboutBody2:
-      "We work with creators, teams, and businesses to turn ideas into practical AI video tools and applications.",
+      "We work with creators, brands and business teams. Whether you have a film in mind or a video product to build, an early idea is welcome.",
     approachLabel: "Our approach",
     approachTitle: "From an idea to video you can actually use.",
     approachBody:
@@ -99,8 +99,8 @@ const copy = {
     storytelling: "AI Video Application Development",
     storytellingBody:
       "From early prototypes to working applications, we develop clear, reliable, and accessible AI video products for creators, teams, and businesses.",
-    servicesTitle: "What we build with AI video",
-    servicesLabel: "Services",
+    servicesTitle: "What would you like to create?",
+    servicesLabel: "PROJECT INQUIRIES WELCOME",
     toolTag: "AI Video",
     toolTitle: "AI Video Tools",
     toolBody:
@@ -110,10 +110,10 @@ const copy = {
     appBody:
       "Purpose-built AI video applications, from capability selection and product design to development and workflow integration.",
     contactLabel: "Start a conversation",
-    contactTitle: "Your next AI video product starts here.",
+    contactTitle: "Every project starts with a conversation.",
     contactBody:
-      "Whether you are imagining a new AI video tool or bringing AI video into an existing business, we can help turn the idea into a working product.",
-    contactCta: "Discuss a project",
+      "AI comic series, short dramas, videos, ads, tools and applications: project inquiries are welcome. Tell us what you want to make, who it is for and the style you have in mind. We can discuss the scope and a quote.",
+    contactCta: "Tell us about your project",
   },
 } as const;
 
@@ -476,7 +476,7 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
         <HeroVideo />
         <div className="hero-shade" />
         <div className="hero-center">
-          <div className="hero-kicker">{language === "zh" ? "AI 视频工具与定制应用开发" : "AI VIDEO TOOLS & CUSTOM APPLICATION DEVELOPMENT"}</div>
+          <div className="hero-kicker">{language === "zh" ? "AI 漫剧 · AI 短剧 · AI 视频 · AI 广告" : "AI COMIC SERIES · SHORT DRAMAS · VIDEOS · ADS"}</div>
           <h1>
             <motion.span
               className="display-accent"
@@ -500,7 +500,7 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
           </motion.p>
           <motion.a
             className="hero-cta"
-            href="#about"
+            href="mailto:hello@saifuliqi.com"
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: .8, delay: .75 }}
@@ -574,6 +574,9 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
         <motion.div className="services-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .7 }}>
           <h2 className="display-accent">{t.servicesTitle}</h2><span>{t.servicesLabel}</span>
         </motion.div>
+        <p className="production-intro">{language === "zh" ? "四类制作业务均接受委托。无论已有脚本，还是只有一个想法，都欢迎先来咨询。" : "All four production services are open for commissions. Bring a script or an early idea: inquiries are welcome."}</p>
+        <div className="production-grid">{productionOfferings.map((item, index) => <a className="production-card" key={item.slug} href={localPath(language, `/services/${item.slug}`)}><span className="production-number">0{index + 1}</span><h3>{item[language].title}</h3><p>{item[language].summary}</p><span className="production-card-cta">{language === "zh" ? "了解制作与咨询" : "Explore & discuss"}<ArrowUpRight size={17} /></span></a>)}</div>
+        <div className="development-heading"><h3>{language === "zh" ? "同时提供 AI 工具与应用开发" : "We also build AI video tools and applications"}</h3><p>{language === "zh" ? "把创作流程，变成可以持续使用的产品。" : "Turn creative workflows into products people can use."}</p></div>
         <div className="services-grid">
           <ServiceCard video={TOOL_VIDEO} tag={t.toolTag} title={t.toolTitle} body={t.toolBody} href={localPath(language, "/services/ai-video-tools")} />
           <ServiceCard video={APPLICATION_VIDEO} tag={t.appTag} title={t.appTitle} body={t.appBody} href={localPath(language, "/services/custom-ai-video-applications")} />
@@ -605,8 +608,8 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
             </a>
             <p>
               {language === "zh"
-                ? "AI 视频工具与应用开发"
-                : "AI video tools and application development"}
+                ? "AI 视频制作与应用开发"
+                : "AI video production and application development"}
             </p>
           </div>
           <nav
@@ -633,6 +636,7 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
           </div>
         </div>
         <nav className="footer-resource-links" aria-label={language === "zh" ? "服务与资源" : "Services and resources"}>
+          {productionOfferings.map(item => <a key={item.slug} href={localPath(language, `/services/${item.slug}`)}>{item[language].title}</a>)}
           <a href={localPath(language, "/services/ai-video-tools")}>{language === "zh" ? "AI 视频工具开发" : "AI video tool development"}</a>
           <a href={localPath(language, "/services/custom-ai-video-applications")}>{language === "zh" ? "定制应用开发" : "Custom application development"}</a>
           <a href={localPath(language, "/guides/planning-an-ai-video-project")}>{language === "zh" ? "项目规划指南" : "Project planning guide"}</a>
