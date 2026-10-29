@@ -1,0 +1,27 @@
+# SAIFU — Beijing Saifuliqi Technology Co., Ltd.
+
+> AI video tools and custom AI video application development for creators, teams and businesses.
+
+SAIFU (赛蚨里奇) is the brand of 北京赛蚨里奇科技有限公司, Beijing Saifuliqi Technology Co., Ltd. The official company website is https://saifuliqi.com/.
+
+The company develops AI video generation and editing tools and purpose-built applications. Its stated work combines capability selection, product design, software development and workflow integration. Project scope, costs and timelines are discussed for the actual use case; this website does not publish a self-serve subscription or a public video-generation API.
+
+## Company and services
+
+- [English company overview](https://saifuliqi.com/en): AI video tools and application development.
+- [Chinese company overview](https://saifuliqi.com/): 中文官网。
+- [AI video tool development](https://saifuliqi.com/en/services/ai-video-tools): Generation, editing and creative workflow tools.
+- [Custom AI video applications](https://saifuliqi.com/en/services/custom-ai-video-applications): Application design and workflow integration around a business use case.
+- [中文：AI 视频工具开发](https://saifuliqi.com/services/ai-video-tools)
+- [中文：定制 AI 视频应用](https://saifuliqi.com/services/custom-ai-video-applications)
+
+## Project planning
+
+- [How to plan an AI video development project](https://saifuliqi.com/en/guides/planning-an-ai-video-project): Define users, inputs, quality criteria, workflow costs and a bounded prototype.
+- [Project FAQ](https://saifuliqi.com/en/faq): Service scope, preparation, costs, timelines and contact.
+- [中文：AI 视频项目规划指南](https://saifuliqi.com/guides/planning-an-ai-video-project)
+- [中文：项目合作常见问题](https://saifuliqi.com/faq)
+
+## Contact
+
+Business and development inquiries: hello@saifuliqi.com.

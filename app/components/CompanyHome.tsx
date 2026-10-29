@@ -11,7 +11,9 @@ import {
   X,
 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import WarpText from "./components/WarpText";
+import WarpText from "./WarpText";
+import { faq } from "../lib/content";
+import { localPath } from "../lib/site";
 
 const HERO_VIDEO =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4";
@@ -321,11 +323,13 @@ function ServiceCard({
   tag,
   title,
   body,
+  href,
 }: {
   video: string;
   tag: string;
   title: string;
   body: string;
+  href: string;
 }) {
   return (
     <motion.article
@@ -344,15 +348,15 @@ function ServiceCard({
           <span>{tag}</span>
           <span className="service-arrow liquid-glass"><ArrowUpRight size={17} /></span>
         </div>
-        <h3>{title}</h3>
+        <h3><a href={href}>{title}</a></h3>
         <p>{body}</p>
       </div>
     </motion.article>
   );
 }
 
-export default function Home() {
-  const [language, setLanguage] = useState<Language>("zh");
+export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguage?: Language }) {
+  const language = initialLanguage;
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
@@ -418,9 +422,9 @@ export default function Home() {
         </nav>
         <div className="nav-actions">
           <div className="language-switch" aria-label="Choose language">
-            <button type="button" className={language === "zh" ? "active" : ""} onClick={() => setLanguage("zh")}>中</button>
+            <a href="/" hrefLang="zh-CN" className={language === "zh" ? "active" : ""} aria-current={language === "zh" ? "page" : undefined}>中</a>
             <i />
-            <button type="button" className={language === "en" ? "active" : ""} onClick={() => setLanguage("en")}>EN</button>
+            <a href="/en" hrefLang="en" className={language === "en" ? "active" : ""} aria-current={language === "en" ? "page" : undefined}>EN</a>
           </div>
           <a className="nav-cta" href="#contact">{language === "zh" ? "合作" : "Partner"}</a>
           <button
@@ -472,6 +476,7 @@ export default function Home() {
         <HeroVideo />
         <div className="hero-shade" />
         <div className="hero-center">
+          <div className="hero-kicker">{language === "zh" ? "AI 视频工具与定制应用开发" : "AI VIDEO TOOLS & CUSTOM APPLICATION DEVELOPMENT"}</div>
           <h1>
             <motion.span
               className="display-accent"
@@ -481,6 +486,7 @@ export default function Home() {
             >
               {t.heroTop}
             </motion.span>
+            {language === "en" ? " " : null}
             <motion.strong
               initial={{ opacity: 0, y: 26, filter: "blur(10px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -569,9 +575,16 @@ export default function Home() {
           <h2 className="display-accent">{t.servicesTitle}</h2><span>{t.servicesLabel}</span>
         </motion.div>
         <div className="services-grid">
-          <ServiceCard video={TOOL_VIDEO} tag={t.toolTag} title={t.toolTitle} body={t.toolBody} />
-          <ServiceCard video={APPLICATION_VIDEO} tag={t.appTag} title={t.appTitle} body={t.appBody} />
+          <ServiceCard video={TOOL_VIDEO} tag={t.toolTag} title={t.toolTitle} body={t.toolBody} href={localPath(language, "/services/ai-video-tools")} />
+          <ServiceCard video={APPLICATION_VIDEO} tag={t.appTag} title={t.appTitle} body={t.appBody} href={localPath(language, "/services/custom-ai-video-applications")} />
         </div>
+      </section>
+
+      <section className="discovery section-shell" aria-labelledby="discovery-title">
+        <div className="discovery-heading"><span className="section-label">{language === "zh" ? "了解合作" : "PLAN YOUR PROJECT"}</span><h2 id="discovery-title">{language === "zh" ? "从一个清楚的问题开始。" : "Start with a clear question."}</h2><p>{language === "zh" ? "了解服务范围、准备项目需求，再决定下一步要验证什么。" : "Explore the service scope and prepare a brief before deciding what to validate first."}</p></div>
+        <div className="discovery-links"><a href={localPath(language, "/services/ai-video-tools")}>{language === "zh" ? "AI 视频工具开发" : "AI video tool development"}<span aria-hidden="true">↗</span></a><a href={localPath(language, "/services/custom-ai-video-applications")}>{language === "zh" ? "定制 AI 视频应用" : "Custom AI video applications"}<span aria-hidden="true">↗</span></a><a href={localPath(language, "/guides/planning-an-ai-video-project")}>{language === "zh" ? "如何规划 AI 视频开发项目" : "How to plan an AI video project"}<span aria-hidden="true">↗</span></a></div>
+        <div className="home-faq">{faq[language].slice(0, 3).map(item => <details key={item.question}><summary>{item.question}</summary><p>{item.answer}</p></details>)}</div>
+        <a className="discovery-more" href={localPath(language, "/faq")}>{language === "zh" ? "查看所有常见问题" : "Read all project questions"} <span aria-hidden="true">↗</span></a>
       </section>
 
       <section className="contact section-shell" id="contact">
@@ -619,6 +632,12 @@ export default function Home() {
             </a>
           </div>
         </div>
+        <nav className="footer-resource-links" aria-label={language === "zh" ? "服务与资源" : "Services and resources"}>
+          <a href={localPath(language, "/services/ai-video-tools")}>{language === "zh" ? "AI 视频工具开发" : "AI video tool development"}</a>
+          <a href={localPath(language, "/services/custom-ai-video-applications")}>{language === "zh" ? "定制应用开发" : "Custom application development"}</a>
+          <a href={localPath(language, "/guides/planning-an-ai-video-project")}>{language === "zh" ? "项目规划指南" : "Project planning guide"}</a>
+          <a href={localPath(language, "/faq")}>{language === "zh" ? "常见问题" : "FAQ"}</a>
+        </nav>
         <div className="footer-meta">
           <p>© 2026 北京赛蚨里奇科技有限公司 · Beijing Saifuliqi Technology Co., Ltd.</p>
           <a href="#top">BACK TO TOP <ArrowUpRight size={15} /></a>

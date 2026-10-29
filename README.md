@@ -25,9 +25,15 @@ npm test
 ## Project structure
 
 - `app/` — bilingual React website and visual styles
+- `app/(zh)/` and `app/(en)/en/` — independently rendered Chinese and English pages, with localized root layouts
+- `app/lib/site.ts` and `app/lib/content.ts` — shared metadata, URL helpers, service copy, FAQs and planning guide
 - `public/` — production website assets
 - `worker/` — Cloudflare/Vinext worker entry point
 - `.openai/hosting.json` — optional hosting bindings
+
+## Search structure
+
+The site has ten canonical pages: Chinese and English versions of the homepage, two development services, the project FAQ and a project-planning guide. Language switches are ordinary links; each version has matching server-rendered language, canonical and reciprocal hreflang metadata. [SEO audit and validation record](docs/seo-audit-2026-10-29.md).
 
 ## Brand typography
 
