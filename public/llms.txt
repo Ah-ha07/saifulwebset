@@ -1,37 +1,37 @@
 # SAIFU — AI Video Production & Application Development
 
-> AI comic series, short dramas, videos and ads: commissions and project inquiries welcome. AI video tools and custom application development are also available.
+> AI video production for brands, agencies and storytellers: commercials, social ads, brand and product videos, animation, motion comics and narrative shorts. AI video tools and custom application development are also available.
 
-SAIFU (赛蚨里奇) is the brand of 北京赛蚨里奇科技有限公司, Beijing Saifuliqi Technology Co., Ltd. The official company website is https://saifuliqi.com/.
+SAIFU (赛蚨里奇) is the brand of 北京赛蚨里奇科技有限公司, Beijing Saifuliqi Technology Co., Ltd. The official company website is https://saifuliqi.com/. The default entry redirects to the English site at /en. Chinese pages are available at /zh. Visitors choose languages using page links.
 
 The company accepts commissions for AI comic series, short dramas, creative videos and ads. It also develops AI video generation and editing tools and purpose-built applications. Its stated work combines capability selection, product design, software development and workflow integration. Production and development scope, costs and timelines are discussed for the actual brief; this website does not publish a self-serve subscription or a public video-generation API.
 
 ## Production services
 
-- [AI comic series production](https://saifuliqi.com/en/services/ai-comic-series): Comic-style narrative videos and episodic stories.
-- [AI short drama production](https://saifuliqi.com/en/services/ai-short-dramas): Short dramas and narrative films.
+- [AI animation and motion comics](https://saifuliqi.com/en/services/ai-comic-series): Comic-style narrative videos and episodic stories.
+- [AI short films and narrative series](https://saifuliqi.com/en/services/ai-short-dramas): Short dramas and narrative films.
 - [AI video production](https://saifuliqi.com/en/services/ai-video-production): Brand content, product introductions and creative films.
-- [AI ad production](https://saifuliqi.com/en/services/ai-ad-production): Ads, brand commercials and product promotion videos.
-- [中文：AI 漫剧制作](https://saifuliqi.com/services/ai-comic-series)
-- [中文：AI 短剧制作](https://saifuliqi.com/services/ai-short-dramas)
-- [中文：AI 视频制作](https://saifuliqi.com/services/ai-video-production)
-- [中文：AI 广告制作](https://saifuliqi.com/services/ai-ad-production)
+- [AI commercials and social ads](https://saifuliqi.com/en/services/ai-ad-production): Ads, brand commercials and product promotion videos.
+- [中文：AI 漫剧制作](https://saifuliqi.com/zh/services/ai-comic-series)
+- [中文：AI 短剧制作](https://saifuliqi.com/zh/services/ai-short-dramas)
+- [中文：AI 视频制作](https://saifuliqi.com/zh/services/ai-video-production)
+- [中文：AI 广告制作](https://saifuliqi.com/zh/services/ai-ad-production)
 
 ## Company and development services
 
 - [English company overview](https://saifuliqi.com/en): AI video tools and application development.
-- [Chinese company overview](https://saifuliqi.com/): 中文官网。
+- [Chinese company overview](https://saifuliqi.com/zh): 中文官网。
 - [AI video tool development](https://saifuliqi.com/en/services/ai-video-tools): Generation, editing and creative workflow tools.
 - [Custom AI video applications](https://saifuliqi.com/en/services/custom-ai-video-applications): Application design and workflow integration around a business use case.
-- [中文：AI 视频工具开发](https://saifuliqi.com/services/ai-video-tools)
-- [中文：定制 AI 视频应用](https://saifuliqi.com/services/custom-ai-video-applications)
+- [中文：AI 视频工具开发](https://saifuliqi.com/zh/services/ai-video-tools)
+- [中文：定制 AI 视频应用](https://saifuliqi.com/zh/services/custom-ai-video-applications)
 
 ## Project planning
 
 - [How to plan an AI video development project](https://saifuliqi.com/en/guides/planning-an-ai-video-project): Define users, inputs, quality criteria, workflow costs and a bounded prototype.
 - [Project FAQ](https://saifuliqi.com/en/faq): Service scope, preparation, costs, timelines and contact.
-- [中文：AI 视频项目规划指南](https://saifuliqi.com/guides/planning-an-ai-video-project)
-- [中文：项目合作常见问题](https://saifuliqi.com/faq)
+- [中文：AI 视频项目规划指南](https://saifuliqi.com/zh/guides/planning-an-ai-video-project)
+- [中文：项目合作常见问题](https://saifuliqi.com/zh/faq)
 
 ## Contact
 

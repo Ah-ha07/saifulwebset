@@ -1,129 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://saifuliqi.com/</loc>
-    <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/" />
-  </url>
-  <url>
     <loc>https://saifuliqi.com/en</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en" />
   </url>
   <url>
-    <loc>https://saifuliqi.com/services/ai-comic-series</loc>
+    <loc>https://saifuliqi.com/zh</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/services/ai-comic-series" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-comic-series" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/services/ai-comic-series" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en" />
   </url>
   <url>
     <loc>https://saifuliqi.com/en/services/ai-comic-series</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/services/ai-comic-series" />
     <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-comic-series" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/services/ai-comic-series" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/services/ai-comic-series" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/services/ai-comic-series" />
   </url>
   <url>
-    <loc>https://saifuliqi.com/services/ai-short-dramas</loc>
+    <loc>https://saifuliqi.com/zh/services/ai-comic-series</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/services/ai-short-dramas" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-short-dramas" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/services/ai-short-dramas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-comic-series" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/services/ai-comic-series" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/services/ai-comic-series" />
   </url>
   <url>
     <loc>https://saifuliqi.com/en/services/ai-short-dramas</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/services/ai-short-dramas" />
     <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-short-dramas" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/services/ai-short-dramas" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/services/ai-short-dramas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/services/ai-short-dramas" />
   </url>
   <url>
-    <loc>https://saifuliqi.com/services/ai-video-production</loc>
+    <loc>https://saifuliqi.com/zh/services/ai-short-dramas</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/services/ai-video-production" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-video-production" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/services/ai-video-production" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-short-dramas" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/services/ai-short-dramas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/services/ai-short-dramas" />
   </url>
   <url>
     <loc>https://saifuliqi.com/en/services/ai-video-production</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/services/ai-video-production" />
     <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-video-production" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/services/ai-video-production" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/services/ai-video-production" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/services/ai-video-production" />
   </url>
   <url>
-    <loc>https://saifuliqi.com/services/ai-ad-production</loc>
+    <loc>https://saifuliqi.com/zh/services/ai-video-production</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/services/ai-ad-production" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-ad-production" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/services/ai-ad-production" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-video-production" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/services/ai-video-production" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/services/ai-video-production" />
   </url>
   <url>
     <loc>https://saifuliqi.com/en/services/ai-ad-production</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/services/ai-ad-production" />
     <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-ad-production" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/services/ai-ad-production" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/services/ai-ad-production" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/services/ai-ad-production" />
   </url>
   <url>
-    <loc>https://saifuliqi.com/services/ai-video-tools</loc>
+    <loc>https://saifuliqi.com/zh/services/ai-ad-production</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/services/ai-video-tools" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-video-tools" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/services/ai-video-tools" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-ad-production" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/services/ai-ad-production" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/services/ai-ad-production" />
   </url>
   <url>
     <loc>https://saifuliqi.com/en/services/ai-video-tools</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/services/ai-video-tools" />
     <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-video-tools" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/services/ai-video-tools" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/services/ai-video-tools" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/services/ai-video-tools" />
   </url>
   <url>
-    <loc>https://saifuliqi.com/services/custom-ai-video-applications</loc>
+    <loc>https://saifuliqi.com/zh/services/ai-video-tools</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/services/custom-ai-video-applications" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/custom-ai-video-applications" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/services/custom-ai-video-applications" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/ai-video-tools" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/services/ai-video-tools" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/services/ai-video-tools" />
   </url>
   <url>
     <loc>https://saifuliqi.com/en/services/custom-ai-video-applications</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/services/custom-ai-video-applications" />
     <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/custom-ai-video-applications" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/services/custom-ai-video-applications" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/services/custom-ai-video-applications" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/services/custom-ai-video-applications" />
   </url>
   <url>
-    <loc>https://saifuliqi.com/faq</loc>
+    <loc>https://saifuliqi.com/zh/services/custom-ai-video-applications</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/faq" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/faq" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/faq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/services/custom-ai-video-applications" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/services/custom-ai-video-applications" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/services/custom-ai-video-applications" />
   </url>
   <url>
     <loc>https://saifuliqi.com/en/faq</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/faq" />
     <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/faq" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/faq" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/faq" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/faq" />
   </url>
   <url>
-    <loc>https://saifuliqi.com/guides/planning-an-ai-video-project</loc>
+    <loc>https://saifuliqi.com/zh/faq</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/guides/planning-an-ai-video-project" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/guides/planning-an-ai-video-project" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/guides/planning-an-ai-video-project" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/faq" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/faq" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/faq" />
   </url>
   <url>
     <loc>https://saifuliqi.com/en/guides/planning-an-ai-video-project</loc>
     <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/guides/planning-an-ai-video-project" />
     <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/guides/planning-an-ai-video-project" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/guides/planning-an-ai-video-project" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/guides/planning-an-ai-video-project" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/guides/planning-an-ai-video-project" />
+  </url>
+  <url>
+    <loc>https://saifuliqi.com/zh/guides/planning-an-ai-video-project</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://saifuliqi.com/en/guides/planning-an-ai-video-project" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://saifuliqi.com/zh/guides/planning-an-ai-video-project" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://saifuliqi.com/en/guides/planning-an-ai-video-project" />
   </url>
 </urlset>

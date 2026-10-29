@@ -13,7 +13,7 @@ import {
 import { useCallback, useEffect, useRef, useState } from "react";
 import WarpText from "./WarpText";
 import { faq, productionOfferings } from "../lib/content";
-import { localPath } from "../lib/site";
+import { inquiryHref, localPath } from "../lib/site";
 
 const HERO_VIDEO =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4";
@@ -73,47 +73,47 @@ const copy = {
     contactCta: "描述需求，开始咨询",
   },
   en: {
-    nav: ["About", "Capabilities", "Services", "Contact"],
-    heroTop: "Turn imagination",
-    heroBottom: "into video.",
+    nav: ["About", "Our approach", "Services", "Contact"],
+    heroTop: "Stories imagined.",
+    heroBottom: "Films made.",
     heroBody:
-      "SAIFU accepts commissions for AI comic series, short dramas, videos and ads. We also develop AI video tools and custom applications. Bring an idea, script or reference film, and let’s discuss your project.",
-    heroCta: "Discuss your project",
-    aboutLabel: "About Saifu",
-    aboutLead: "Stories made visual.",
-    aboutAccent: "Ideas made real.",
+      "AI video production for brands, agencies and storytellers. We create commercials, product videos, animation and narrative shorts — from your first idea to the final edit.",
+    heroCta: "Start a project",
+    aboutLabel: "About SAIFU",
+    aboutLead: "Your story.",
+    aboutAccent: "A new way to tell it.",
     aboutBody:
-      "AI video is a new creative medium. SAIFU combines storytelling, visual ideas and technology to produce comic series, short dramas, videos and ads, and turn creative workflows into useful tools and applications.",
+      "SAIFU is a creative technology company combining storytelling, visual direction and AI production. We turn brand messages, product ideas and original stories into films, ads and animated content.",
     aboutBody2:
-      "We work with creators, brands and business teams. Whether you have a film in mind or a video product to build, an early idea is welcome.",
+      "Work with us on a complete video or a specific stage of production. Bring a brief, a script or a reference you love. We’ll work with you to define the creative direction and production scope.",
     approachLabel: "Our approach",
-    approachTitle: "From an idea to video you can actually use.",
+    approachTitle: "Start with the story. Build the right production around it.",
     approachBody:
-      "We design AI video generation and editing workflows around visual quality, style consistency, efficiency, and creative control, then turn them into complete product experiences.",
-    revealHint: "Move to reveal the result",
-    philosophyTitleA: "AI Video",
-    philosophyTitleB: "Product Development",
-    engineering: "AI Video Generation",
+      "We begin with your audience, message and visual references. From there, we shape the concept, choose the right AI workflow and plan the picture, sound and edit around your brief.",
+    revealHint: "Move to explore the visual",
+    philosophyTitleA: "Creative Direction",
+    philosophyTitleB: "AI Production",
+    engineering: "A clear creative direction",
     engineeringBody:
-      "We bring together the right AI video capabilities for different use cases, supporting generation, extension, and editing from text, images, and existing media.",
-    storytelling: "AI Video Application Development",
+      "Agree on the story, mood, visual style and details that matter to your brand. Scripts, storyboards and visual references give the production a shared direction.",
+    storytelling: "A production built around your brief",
     storytellingBody:
-      "From early prototypes to working applications, we develop clear, reliable, and accessible AI video products for creators, teams, and businesses.",
-    servicesTitle: "What would you like to create?",
-    servicesLabel: "PROJECT INQUIRIES WELCOME",
-    toolTag: "AI Video",
+      "Combine AI-generated imagery and footage with editing and sound. Length, formats, review stages and delivery files are agreed for each project.",
+    servicesTitle: "What are you making?",
+    servicesLabel: "AI VIDEO PRODUCTION SERVICES",
+    toolTag: "For creative teams",
     toolTitle: "AI Video Tools",
     toolBody:
-      "Accessible AI video generation, editing, and workflow tools built for creators and teams.",
+      "Build generation, editing and creative workflow tools for work your team needs to repeat.",
     appTag: "Custom development",
     appTitle: "Custom AI Video Applications",
     appBody:
-      "Purpose-built AI video applications, from capability selection and product design to development and workflow integration.",
-    contactLabel: "Start a conversation",
-    contactTitle: "Every project starts with a conversation.",
+      "Connect AI video capabilities with your product or business workflow, from an initial prototype to a working application.",
+    contactLabel: "Let’s make something",
+    contactTitle: "Tell us what you have in mind.",
     contactBody:
-      "AI comic series, short dramas, videos, ads, tools and applications: project inquiries are welcome. Tell us what you want to make, who it is for and the style you have in mind. We can discuss the scope and a quote.",
-    contactCta: "Tell us about your project",
+      "Share your idea, audience, visual references and target date. If you have a length, format or budget in mind, include that too. We’ll discuss the creative approach, scope and a project quote. An early idea is welcome.",
+    contactCta: "Send your project brief",
   },
 } as const;
 
@@ -355,7 +355,7 @@ function ServiceCard({
   );
 }
 
-export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguage?: Language }) {
+export default function CompanyHome({ initialLanguage = "en" }: { initialLanguage?: Language }) {
   const language = initialLanguage;
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
@@ -422,11 +422,11 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
         </nav>
         <div className="nav-actions">
           <div className="language-switch" aria-label="Choose language">
-            <a href="/" hrefLang="zh-CN" className={language === "zh" ? "active" : ""} aria-current={language === "zh" ? "page" : undefined}>中</a>
+            <a href={localPath("en")} hrefLang="en" className={language === "en" ? "active" : ""} aria-current={language === "en" ? "page" : undefined}>EN</a>
             <i />
-            <a href="/en" hrefLang="en" className={language === "en" ? "active" : ""} aria-current={language === "en" ? "page" : undefined}>EN</a>
+            <a href={localPath("zh")} hrefLang="zh-CN" className={language === "zh" ? "active" : ""} aria-current={language === "zh" ? "page" : undefined}>中文</a>
           </div>
-          <a className="nav-cta" href="#contact">{language === "zh" ? "合作" : "Partner"}</a>
+          <a className="nav-cta" href="#contact">{language === "zh" ? "合作" : "Start a project"}</a>
           <button
             className="menu-button"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -457,7 +457,7 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
             ))}
           </div>
           <div className="mobile-menu-contact">
-            <a className="mobile-menu-email" href="mailto:hello@saifuliqi.com">
+            <a className="mobile-menu-email" href={inquiryHref(language)}>
               hello@saifuliqi.com
             </a>
             <a
@@ -476,7 +476,7 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
         <HeroVideo />
         <div className="hero-shade" />
         <div className="hero-center">
-          <div className="hero-kicker">{language === "zh" ? "AI 漫剧 · AI 短剧 · AI 视频 · AI 广告" : "AI COMIC SERIES · SHORT DRAMAS · VIDEOS · ADS"}</div>
+          <div className="hero-kicker">{language === "zh" ? "AI 漫剧 · AI 短剧 · AI 视频 · AI 广告" : "AI VIDEO · ANIMATION · COMMERCIALS"}</div>
           <h1>
             <motion.span
               className="display-accent"
@@ -500,7 +500,7 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
           </motion.p>
           <motion.a
             className="hero-cta"
-            href="mailto:hello@saifuliqi.com"
+            href={inquiryHref(language)}
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: .8, delay: .75 }}
@@ -511,8 +511,8 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
           </motion.a>
         </div>
         <div className="hero-foot">
-          <span>AI VIDEO TOOLS</span><i />
-          <span>APPLICATION DEVELOPMENT</span>
+          <span>{language === "zh" ? "AI VIDEO TOOLS" : "CREATIVE TECHNOLOGY"}</span><i />
+          <span>{language === "zh" ? "APPLICATION DEVELOPMENT" : "STORIES IN MOTION"}</span>
         </div>
       </section>
 
@@ -574,8 +574,8 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
         <motion.div className="services-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .7 }}>
           <h2 className="display-accent">{t.servicesTitle}</h2><span>{t.servicesLabel}</span>
         </motion.div>
-        <p className="production-intro">{language === "zh" ? "四类制作业务均接受委托。无论已有脚本，还是只有一个想法，都欢迎先来咨询。" : "All four production services are open for commissions. Bring a script or an early idea: inquiries are welcome."}</p>
-        <div className="production-grid">{productionOfferings.map((item, index) => <a className="production-card" key={item.slug} href={localPath(language, `/services/${item.slug}`)}><span className="production-number">0{index + 1}</span><h3>{item[language].title}</h3><p>{item[language].summary}</p><span className="production-card-cta">{language === "zh" ? "了解制作与咨询" : "Explore & discuss"}<ArrowUpRight size={17} /></span></a>)}</div>
+        <p className="production-intro">{language === "zh" ? "四类制作业务均接受委托。无论已有脚本，还是只有一个想法，都欢迎先来咨询。" : "From a product launch to an original story, find the production service that fits your brief. You can commission a complete film or discuss support for part of the process."}</p>
+        <div className="production-grid">{productionOfferings.map((item, index) => <a className="production-card" key={item.slug} href={localPath(language, `/services/${item.slug}`)}><span className="production-number">0{index + 1}</span><h3>{item[language].title}</h3><p>{item[language].summary}</p><span className="production-card-cta">{language === "zh" ? "了解制作与咨询" : "Explore this service"}<ArrowUpRight size={17} /></span></a>)}</div>
         <div className="development-heading"><h3>{language === "zh" ? "同时提供 AI 工具与应用开发" : "We also build AI video tools and applications"}</h3><p>{language === "zh" ? "把创作流程，变成可以持续使用的产品。" : "Turn creative workflows into products people can use."}</p></div>
         <div className="services-grid">
           <ServiceCard video={TOOL_VIDEO} tag={t.toolTag} title={t.toolTitle} body={t.toolBody} href={localPath(language, "/services/ai-video-tools")} />
@@ -584,8 +584,12 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
       </section>
 
       <section className="discovery section-shell" aria-labelledby="discovery-title">
-        <div className="discovery-heading"><span className="section-label">{language === "zh" ? "了解合作" : "PLAN YOUR PROJECT"}</span><h2 id="discovery-title">{language === "zh" ? "从一个清楚的问题开始。" : "Start with a clear question."}</h2><p>{language === "zh" ? "了解服务范围、准备项目需求，再决定下一步要验证什么。" : "Explore the service scope and prepare a brief before deciding what to validate first."}</p></div>
-        <div className="discovery-links"><a href={localPath(language, "/services/ai-video-tools")}>{language === "zh" ? "AI 视频工具开发" : "AI video tool development"}<span aria-hidden="true">↗</span></a><a href={localPath(language, "/services/custom-ai-video-applications")}>{language === "zh" ? "定制 AI 视频应用" : "Custom AI video applications"}<span aria-hidden="true">↗</span></a><a href={localPath(language, "/guides/planning-an-ai-video-project")}>{language === "zh" ? "如何规划 AI 视频开发项目" : "How to plan an AI video project"}<span aria-hidden="true">↗</span></a></div>
+        <div className="discovery-heading"><span className="section-label">{language === "zh" ? "了解合作" : "PLAN YOUR PROJECT"}</span><h2 id="discovery-title">{language === "zh" ? "从一个清楚的问题开始。" : "A clear path from brief to film."}</h2><p>{language === "zh" ? "了解服务范围、准备项目需求，再决定下一步要验证什么。" : "From the first conversation to the final files, agree on the direction and scope before production begins."}</p></div>
+        {language === "en" ? <ol className="project-steps">
+          <li><span>01 / BRIEF</span><h3>Share the idea</h3><p>Tell us your audience, message, references and intended use. A finished script is optional.</p></li>
+          <li><span>02 / DIRECTION</span><h3>Agree on the plan</h3><p>Define the visual direction, production stages, deliverables, review points, schedule and quote.</p></li>
+          <li><span>03 / PRODUCTION</span><h3>Create, review, deliver</h3><p>Move through the agreed production and review stages, then prepare the final files for your chosen formats.</p></li>
+        </ol> : <div className="discovery-links"><a href={localPath(language, "/services/ai-video-tools")}>AI 视频工具开发<span aria-hidden="true">↗</span></a><a href={localPath(language, "/services/custom-ai-video-applications")}>定制 AI 视频应用<span aria-hidden="true">↗</span></a><a href={localPath(language, "/guides/planning-an-ai-video-project")}>如何规划 AI 视频开发项目<span aria-hidden="true">↗</span></a></div>}
         <div className="home-faq">{faq[language].slice(0, 3).map(item => <details key={item.question}><summary>{item.question}</summary><p>{item.answer}</p></details>)}</div>
         <a className="discovery-more" href={localPath(language, "/faq")}>{language === "zh" ? "查看所有常见问题" : "Read all project questions"} <span aria-hidden="true">↗</span></a>
       </section>
@@ -595,7 +599,7 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
           <span>{t.contactLabel}</span>
           <h2>{t.contactTitle}</h2>
           <p>{t.contactBody}</p>
-          <a href="mailto:hello@saifuliqi.com">{t.contactCta}<span><ArrowUpRight size={18} /></span></a>
+          <a href={inquiryHref(language)}>{t.contactCta}<span><ArrowUpRight size={18} /></span></a>
         </motion.div>
       </section>
 
@@ -609,7 +613,7 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
             <p>
               {language === "zh"
                 ? "AI 视频制作与应用开发"
-                : "AI video production and application development"}
+                : "AI video production for brands and storytellers"}
             </p>
           </div>
           <nav
@@ -627,10 +631,10 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
           </nav>
           <div className="footer-contact">
             <span>{language === "zh" ? "项目合作" : "Start a project"}</span>
-            <a className="footer-email" href="mailto:hello@saifuliqi.com">
+            <a className="footer-email" href={inquiryHref(language)}>
               hello@saifuliqi.com
             </a>
-            <a className="footer-project" href="mailto:hello@saifuliqi.com">
+            <a className="footer-project" href={inquiryHref(language)}>
               {t.contactCta}<ArrowUpRight size={16} />
             </a>
           </div>
@@ -643,7 +647,7 @@ export default function CompanyHome({ initialLanguage = "zh" }: { initialLanguag
           <a href={localPath(language, "/faq")}>{language === "zh" ? "常见问题" : "FAQ"}</a>
         </nav>
         <div className="footer-meta">
-          <p>© 2026 北京赛蚨里奇科技有限公司 · Beijing Saifuliqi Technology Co., Ltd.</p>
+          <p>© 2026 {language === "zh" ? "北京赛蚨里奇科技有限公司 · Beijing Saifuliqi Technology Co., Ltd." : "Beijing Saifuliqi Technology Co., Ltd."}</p>
           <a href="#top">BACK TO TOP <ArrowUpRight size={15} /></a>
         </div>
       </footer>

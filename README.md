@@ -2,7 +2,7 @@
 
 Official bilingual website for 北京赛蚨里奇科技有限公司 (Beijing Saifuliqi Technology Co., Ltd.).
 
-SAIFU develops AI video tools and custom AI video applications for creators, teams, and businesses.
+SAIFU produces AI commercials, brand and product videos, animation, motion comics and narrative shorts. It also develops AI video tools and custom applications.
 
 ## Development
 
@@ -25,7 +25,7 @@ npm test
 ## Project structure
 
 - `app/` — bilingual React website and visual styles
-- `app/(zh)/` and `app/(en)/en/` — independently rendered Chinese and English pages, with localized root layouts
+- `app/(zh)/zh/` and `app/(en)/en/` — independently rendered Chinese and English pages, with localized root layouts
 - `app/lib/site.ts` and `app/lib/content.ts` — shared metadata, URL helpers, service copy, FAQs and planning guide
 - `public/` — production website assets
 - `worker/` — Cloudflare/Vinext worker entry point
@@ -33,9 +33,11 @@ npm test
 
 ## Search structure
 
+The global entry `/` permanently redirects to `/en` for every visitor, regardless of browser language. English URLs remain unchanged. Chinese pages live under `/zh`; the eight legacy unprefixed Chinese content URLs permanently redirect to their matching Chinese page. Language selection uses explicit links, without IP or language detection.
+
 The site has eighteen canonical pages: Chinese and English versions of the homepage, four commissioned production services, two development services, the project FAQ and a project-planning guide. Language switches are ordinary links; each version has matching server-rendered language, canonical and reciprocal hreflang metadata. [SEO audit and validation record](docs/seo-audit-2026-10-29.md).
 
-Google Search Console URL-prefix verification for `https://saifuliqi.com/` uses the persistent `verification.google` metadata in `app/lib/site.ts`. Keep this public verification value in place after ownership is verified. Submit `https://saifuliqi.com/sitemap.xml` in Search Console when updating the page inventory.
+Google Search Console URL-prefix verification for `https://saifuliqi.com/` uses the persistent `verification.google` metadata in `app/lib/site.ts`. Keep this public verification value in place after ownership is verified. The existing submitted sitemap remains at `https://saifuliqi.com/sitemap.xml` and now lists `/en` and `/zh` pages with English `x-default` alternates.
 
 ## Brand typography
 

@@ -25,7 +25,7 @@ function seo(html) {
 }
 
 test("server-renders the Chinese company homepage with crawlable service links", async () => {
-  const response = await render();
+  const response = await render("/zh");
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
   const html = await response.text();
@@ -35,15 +35,15 @@ test("server-renders the Chinese company homepage with crawlable service links",
   assert.match(html, /src="\/saifu-mark\.svg"/);
   assert.match(html, /让想象/);
   assert.match(html, /成为视频。/);
-  assert.match(html, /href="\/services\/ai-video-tools"/);
-  assert.match(html, /href="\/services\/custom-ai-video-applications"/);
-  assert.match(html, /href="\/guides\/planning-an-ai-video-project"/);
-  assert.match(html, /href="\/faq"/);
+  assert.match(html, /href="\/zh\/services\/ai-video-tools"/);
+  assert.match(html, /href="\/zh\/services\/custom-ai-video-applications"/);
+  assert.match(html, /href="\/zh\/guides\/planning-an-ai-video-project"/);
+  assert.match(html, /href="\/zh\/faq"/);
   assert.match(html, /href="\/en"[^>]*hrefLang="en"/i);
   assert.match(html, /北京赛蚨里奇科技有限公司/);
   assert.match(html, /hello@saifuliqi\.com/);
   for (const slug of ["ai-comic-series", "ai-short-dramas", "ai-video-production", "ai-ad-production"]) {
-    assert.ok(html.includes(`href="/services/${slug}"`), `Missing commissioned service ${slug}`);
+    assert.ok(html.includes(`href="/zh/services/${slug}"`), `Missing commissioned service ${slug}`);
   }
   assert.match(html, /四类制作业务均接受委托/);
   assert.match(html, /<meta name="google-site-verification" content="j_DuvBLdaly267Sro5sH49oz0fj0Wvg5c8J1_VFbpis"\//);
@@ -55,10 +55,10 @@ test("the English homepage is English before JavaScript runs", async () => {
   const html = await response.text();
   assert.match(html, /<html lang="en"/);
   assert.match(html, /class="site language-en"/);
-  assert.match(html, /Turn imagination/);
-  assert.match(html, /into video\./);
+  assert.match(html, /Stories imagined\./);
+  assert.match(html, /Films made\./);
   assert.match(html, /href="\/en\/services\/ai-video-tools"/);
-  assert.equal(seo(html).title, "AI Video, Comic Series &amp; Ad Production | SAIFU");
+  assert.equal(seo(html).title, "AI Video Production, Animation &amp; Commercials | SAIFU");
   // English must never collapse into the Chinese canonical URL.
   assert.equal(seo(html).canonicals[0]?.href, "https://saifuliqi.com/en");
 });
@@ -73,7 +73,7 @@ test("all sitemap pages render unique metadata, reciprocal language links and va
   for (const url of urls) {
     const path = new URL(url).pathname;
     const english = path === "/en" || path.startsWith("/en/");
-    const basePath = english ? path.slice(3) : path === "/" ? "" : path;
+    const basePath = path.slice(3);
     const response = await render(path);
     assert.equal(response.status, 200, path);
     const html = await response.text();
@@ -88,9 +88,9 @@ test("all sitemap pages render unique metadata, reciprocal language links and va
     assert.ok(!descriptions.has(data.descriptions[0].content), `Duplicate description on ${path}`);
     titles.add(data.title); descriptions.add(data.descriptions[0].content);
     assert.deepEqual(Object.fromEntries(data.alternates.map(x => [x.hreflang, x.href])), {
-      "zh-CN": `https://saifuliqi.com${basePath || "/"}`,
+      "zh-CN": `https://saifuliqi.com/zh${basePath}`,
       en: `https://saifuliqi.com/en${basePath}`,
-      "x-default": `https://saifuliqi.com${basePath || "/"}`,
+      "x-default": `https://saifuliqi.com/en${basePath}`,
     }, path);
     const types = data.schemas.map(x => x["@type"]);
     assert.ok(types.includes("Organization"), path);
@@ -110,7 +110,7 @@ test("all sitemap pages render unique metadata, reciprocal language links and va
 });
 
 test("unknown service slugs return 404 instead of indexable placeholder pages", async () => {
-  for (const path of ["/services/not-a-service", "/en/services/not-a-service", "/services/toString", "/en/services/__proto__"]) {
+  for (const path of ["/services/not-a-service", "/en/services/not-a-service", "/zh/services/not-a-service", "/services/toString", "/en/services/__proto__", "/zh/services/toString"]) {
     assert.equal((await render(path)).status, 404, path);
   }
 });
@@ -135,4 +135,23 @@ test("preserves the bilingual design, responsive layouts and crawler entry point
   assert.match(warp, /const fit = Math\.min\(1,/);
   assert.match(robots, /Sitemap: https:\/\/saifuliqi\.com\/sitemap\.xml/);
   assert.match(llms, /https:\/\/saifuliqi\.com\/en\/services\/ai-video-tools/);
+});
+
+
+test("the global entry is English and legacy Chinese links preserve their destination", async () => {
+  const paths = ["", "/services/ai-comic-series", "/services/ai-short-dramas", "/services/ai-video-production", "/services/ai-ad-production", "/services/ai-video-tools", "/services/custom-ai-video-applications", "/faq", "/guides/planning-an-ai-video-project"];
+  for (const path of paths) {
+    const response = await render(`${path || "/"}?source=legacy`);
+    assert.equal(response.status, 308, path);
+    const destination = new URL(response.headers.get("location"), "http://localhost");
+    assert.equal(destination.pathname, path ? `/zh${path}` : "/en", path);
+    assert.equal(destination.searchParams.get("source"), "legacy", path);
+    assert.equal((await render(destination.pathname)).status, 200, path);
+  }
+  const english = await (await render("/en")).text();
+  assert.match(english, /href="\/zh"[^>]*hrefLang="zh-CN"/i);
+  assert.match(english, /Create, review, deliver/);
+  assert.match(english, /mailto:hello@saifuliqi.com\?subject=/);
+  const visible = english.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "").replace(/<[^>]*>/g, "");
+  assert.doesNotMatch(visible, /北京|赛蚨里奇/);
 });

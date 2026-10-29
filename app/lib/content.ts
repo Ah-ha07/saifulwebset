@@ -39,11 +39,11 @@ const productionDetails: Record<string, Record<Language, ServiceCopy>> = {
       ]
     },
     "en": {
-      "title": "AI Comic Series Production & Commissions | SAIFU",
-      "description": "Commission AI comic-style videos and animated series. Discuss stories, characters, visual direction, storyboards, voiceover and editing with SAIFU. Project inquiries welcome.",
-      "eyebrow": "AI COMIC SERIES PRODUCTION",
-      "heading": "Bring your story to life as an AI comic series.",
-      "lead": "SAIFU accepts commissions for AI comic-style videos and episodic stories. Start with an idea, script, character concept or reference film, and discuss how the story should look and feel.",
+      "title": "AI Animation & Motion Comics Production | SAIFU",
+      "description": "AI animation and motion comics for original stories, characters and episodic content. Plan visual direction, storyboards, voiceover and editing with SAIFU.",
+      "eyebrow": "AI ANIMATION & MOTION COMICS",
+      "heading": "Give your characters a world of their own.",
+      "lead": "Create AI animation, motion comics and episodic stories with SAIFU. Start with an original idea, script or character concept, then shape the visual style, motion and pacing around the story.",
       "sections": [
         {
           "heading": "Begin with the story and characters",
@@ -67,7 +67,7 @@ const productionDetails: Record<string, Record<Language, ServiceCopy>> = {
           "heading": "Project inquiries are welcome",
           "paragraphs": [
             "Share the story, intended length or episode count, visual references, distribution use and any schedule or budget constraints. If those details are still open, begin with the idea.",
-            "Pricing and delivery are discussed for the agreed production scope. Email hello@saifuliqi.com to introduce your comic series project."
+            "Pricing and delivery are discussed for the agreed production scope. Email hello@saifuliqi.com to discuss your animation or motion comic project."
           ]
         }
       ]
@@ -109,11 +109,11 @@ const productionDetails: Record<string, Record<Language, ServiceCopy>> = {
       ]
     },
     "en": {
-      "title": "AI Short Drama & Narrative Film Production | SAIFU",
-      "description": "Commission AI short dramas and narrative films with SAIFU. Discuss stories, characters, storyboards, sound and editing from an idea, script or visual reference.",
-      "eyebrow": "AI SHORT DRAMA PRODUCTION",
-      "heading": "Turn a story idea into an AI short drama.",
-      "lead": "SAIFU accepts short drama and narrative film projects, developing the story, characters and visual rhythm into a watchable film. An initial idea is enough to begin a conversation.",
+      "title": "AI Short Film & Narrative Series Production | SAIFU",
+      "description": "AI short films and narrative series, from concept and characters to picture, sound and editing. Bring your story or script to SAIFU to discuss production.",
+      "eyebrow": "AI SHORT FILMS & NARRATIVE SERIES",
+      "heading": "An original story, made for the screen.",
+      "lead": "Develop your idea into an AI short film or narrative series. We work with the story, characters, visual direction, sound and edit to bring the intended emotion to the screen.",
       "sections": [
         {
           "heading": "Start with the audience and story",
@@ -121,7 +121,7 @@ const productionDetails: Record<string, Record<Language, ServiceCopy>> = {
             "Bring a one-line idea, outline or complete script. Define the audience, genre, relationships and emotional focus before discussing a standalone narrative short or an episodic project."
           ],
           "points": [
-            "Short dramas and narrative films.",
+            "Narrative short films and short-form drama series.",
             "Concept films, trailers and production trials for a series.",
             "Story-led content built around a brand or theme."
           ]
@@ -137,7 +137,7 @@ const productionDetails: Record<string, Record<Language, ServiceCopy>> = {
           "heading": "Bring an idea or a script",
           "paragraphs": [
             "Send the genre, story outline, intended length, reference films and distribution use. Include an existing script, character brief or storyboard if available.",
-            "Pricing, timing and revision scope are agreed for the project. Email hello@saifuliqi.com to discuss your short drama."
+            "Pricing, timing and revision scope are agreed for the project. Email hello@saifuliqi.com to discuss your short film or narrative series."
           ]
         }
       ]
@@ -179,11 +179,11 @@ const productionDetails: Record<string, Record<Language, ServiceCopy>> = {
       ]
     },
     "en": {
-      "title": "AI Video Production & Creative Video Commissions | SAIFU",
-      "description": "Commission AI videos, creative films, brand content and product videos with SAIFU. Start with an idea, script, references or existing assets. Project inquiries welcome.",
+      "title": "AI Video Production for Brands & Products | SAIFU",
+      "description": "AI video production for brand stories, product launches, explainers and creative films. Work with SAIFU on visual direction, AI footage, sound and editing.",
       "eyebrow": "AI VIDEO PRODUCTION",
-      "heading": "Have a video in mind? Let’s make it happen.",
-      "lead": "SAIFU accepts AI video and creative content commissions. Bring an idea, script, reference film or existing assets, and discuss the picture, sound and pacing that fit your message.",
+      "heading": "Make your brand’s next story a moving one.",
+      "lead": "Create a brand film, product video, explainer or visual concept with SAIFU. We shape the picture, sound and pacing around the message you want your audience to remember.",
       "sections": [
         {
           "heading": "Build the film around its purpose",
@@ -249,11 +249,11 @@ const productionDetails: Record<string, Record<Language, ServiceCopy>> = {
       ]
     },
     "en": {
-      "title": "AI Ad Production & Brand Commercials | SAIFU",
-      "description": "Commission AI ads, brand commercials and product promotion videos. SAIFU welcomes briefs for creative direction, scripts, AI footage, sound and editing.",
-      "eyebrow": "AI AD PRODUCTION",
-      "heading": "Turn a product message into a brand commercial.",
-      "lead": "SAIFU accepts AI ad and product promotion video commissions. Start with the audience, selling point and intended use, then develop the creative direction and finished film.",
+      "title": "AI Commercials & Social Video Ads | SAIFU",
+      "description": "AI commercial production and social video ads for brands and agencies. Create product launch films and campaign videos with SAIFU. Discuss your brief and request a quote.",
+      "eyebrow": "AI COMMERCIALS & SOCIAL ADS",
+      "heading": "Your product. A story worth watching.",
+      "lead": "Create AI commercials and social video ads around your product and message. From a brand film to a short campaign video, we shape the concept, picture, sound and edit for the audience and channel you have in mind.",
       "sections": [
         {
           "heading": "Clarify the product and the message",
@@ -293,8 +293,8 @@ export const productionOfferings = [
       "summary": "角色、故事与画面风格，把灵感做成漫剧。"
     },
     "en": {
-      "title": "AI Comic Series Production",
-      "summary": "Character-led comic videos and episodic stories."
+      "title": "AI Animation & Motion Comics",
+      "summary": "Original characters, motion comics and animated stories, for a single film or a series."
     }
   },
   {
@@ -304,8 +304,8 @@ export const productionOfferings = [
       "summary": "剧情、人物与镜头节奏，把故事做成短剧。"
     },
     "en": {
-      "title": "AI Short Drama Production",
-      "summary": "Narrative shorts and dramas, from idea to screen."
+      "title": "AI Short Films & Narrative Series",
+      "summary": "Story-led short films, concept trailers and episodic narratives."
     }
   },
   {
@@ -315,7 +315,7 @@ export const productionOfferings = [
       "summary": "品牌内容、产品介绍与创意短片，按用途定制。"
     },
     "en": {
-      "title": "AI Video Production",
+      "title": "Brand & Product Videos",
       "summary": "Brand content, product videos and creative films."
     }
   },
@@ -326,8 +326,8 @@ export const productionOfferings = [
       "summary": "围绕品牌与产品卖点，制作广告与推广视频。"
     },
     "en": {
-      "title": "AI Ad Production",
-      "summary": "Ad creative and commercials built around your brand."
+      "title": "AI Commercials & Social Ads",
+      "summary": "Product launches, brand commercials and video ads for social campaigns."
     }
   }
 ];
@@ -397,15 +397,15 @@ export const faq = {
     { question: "如何联系 SAIFU？", answer: "可以发送邮件至 hello@saifuliqi.com，简要介绍你的产品、使用场景和希望改进的视频流程。官网提供中文与英文的服务介绍，便于项目沟通。" },
   ],
   en: [
-    { question: "What does SAIFU do?", answer: "SAIFU is the brand of Beijing Saifuliqi Technology Co., Ltd. We accept commissions for AI comic series, short dramas, videos and ads, and develop AI video tools and custom applications. Creators, brands and business teams are welcome to discuss projects." },
-    { question: "Can I commission comic series, short dramas, videos and ads?", answer: "Yes. We accept all four types of production projects. Share an idea, script, references or existing assets, then discuss the direction, use, length and production scope before agreeing on a quote and schedule." },
-    { question: "Can I ask about a project with only an early idea?", answer: "Absolutely. Tell us the story, product or message you would like to bring to the screen. We can discuss the style, content and a useful first step. A finished script or specification is not required for an initial inquiry." },
-    { question: "How is tool development different from custom application development?", answer: "Tool development focuses on a reusable generation, editing or creative experience. Custom applications start from a particular business workflow, including existing systems, people and handoffs. A prototype can help define the scope when the needs overlap." },
-    { question: "Can AI video be integrated into an existing product?", answer: "We can discuss an integration around your existing product. Inputs, target videos, available interfaces and review requirements need to be understood before selecting capabilities and defining the integration scope." },
-    { question: "What should I prepare for a project discussion?", answer: "For production, bring an idea or script, references, the intended use, length and timing. For development, add the user and current workflow. An early idea is enough to start the conversation." },
-    { question: "How are project costs and timelines determined?", answer: "Production timing and pricing depend on length, episode count, style, assets, voiceover, editing and delivery. Development also depends on features and integration. Quotes, revision scope and schedules are agreed after the brief is reviewed." },
-    { question: "Will generated videos always match the desired result?", answer: "Results vary by input and use case. Representative examples should be used to evaluate visual quality, consistency, processing time and editability. Acceptable outputs should be documented as part of the project criteria." },
-    { question: "How can I contact SAIFU?", answer: "Email hello@saifuliqi.com with a short description of your product, use case and the video workflow you would like to improve. Our service information is available in Chinese and English." },
+    { question: "What can I create with SAIFU?", answer: "We produce AI commercials, social video ads, brand and product videos, animation, motion comics and narrative shorts. We also develop AI video tools and custom applications for creative teams and businesses." },
+    { question: "Do I need a finished script to get started?", answer: "No. An idea, product summary or a few visual references are enough for an initial conversation. Tell us who the video is for and what it should communicate. We can then discuss the creative direction and production support you need." },
+    { question: "How do I request a quote?", answer: "Email hello@saifuliqi.com with the type of video, intended use, approximate length, formats, visual references and target date. Include a budget range if you have one. We’ll discuss the brief and agree on the production scope before quoting." },
+    { question: "Can I commission a full video or just part of the production?", answer: "Both can be discussed. A project may cover concept and script development, storyboards, visual direction, AI-generated footage, voiceover, sound and editing. If you already have a script or assets, tell us which stages you need help with." },
+    { question: "How do reviews and revisions work?", answer: "Review points, decision-makers and revision scope are agreed before production. Visual references and sample requirements help establish the direction early. Changes to the brief or additional versions should be discussed with their effect on cost and timing." },
+    { question: "What formats and languages can I request?", answer: "Tell us where the video will be used, the aspect ratios and file specifications you need, and any voiceover or subtitle languages. We’ll confirm what can be included in your project before agreeing on scope and delivery." },
+    { question: "What determines the price and timeline?", answer: "Length, visual style, number of scenes or episodes, character continuity, source assets, sound, revisions and delivery versions all affect the scope. Timing and pricing are agreed after the brief is reviewed; there is no single fixed package for every film." },
+    { question: "Can you build AI video tools or integrate video into our product?", answer: "Yes. We can discuss generation and editing tools, custom applications and integration with an existing workflow. Share your users, sample inputs, desired outputs and existing systems so we can define a useful first prototype." },
+    { question: "Who is behind SAIFU?", answer: "SAIFU is the brand of Beijing Saifuliqi Technology Co., Ltd., a creative technology company based in Beijing, China. We welcome international project inquiries. Contact hello@saifuliqi.com to discuss your brief and collaboration requirements." },
   ],
 };
 
