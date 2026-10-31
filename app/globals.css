@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "MiSans";
-  src: url("/fonts/MiSans-Regular.woff2") format("woff2");
+  src: url("/fonts/MiSans-Regular-site-20261031.woff2") format("woff2");
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "MiSans";
-  src: url("/fonts/MiSans-Semibold.woff2") format("woff2");
+  src: url("/fonts/MiSans-Semibold-site-20261031.woff2") format("woff2");
   font-display: swap;
   font-style: normal;
   font-weight: 600;
@@ -1558,7 +1558,7 @@ a:focus-visible {
 .services-header { gap: 30px; }
 .services-header h2 { max-width: 17ch; font-size: clamp(44px, 6vw, 84px); line-height: 1.08; text-wrap: balance; }
 .services-header > span { flex: none; white-space: nowrap; line-height: 1.7; }
-.production-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.production-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .production-card { display: flex; flex-direction: column; min-height: 310px; padding: 27px 24px; border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(150deg, rgba(116, 65, 181, .12), rgba(255, 255, 255, .015) 70%); transition: border-color 250ms ease, transform 250ms ease; }
 .production-card:hover { border-color: #c6a0f2; transform: translateY(-4px); }
 .production-number { color: #c6a0f2; font: 12px "Space Grotesk", sans-serif; letter-spacing: .12em; }

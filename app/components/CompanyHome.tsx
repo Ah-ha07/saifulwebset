@@ -35,7 +35,7 @@ const copy = {
     heroTop: "让想象",
     heroBottom: "成为视频。",
     heroBody:
-      "赛蚨里奇 SAIFU 承接 AI 漫剧、AI 短剧、AI 视频与 AI 广告制作，也提供 AI 视频工具和定制应用开发。欢迎带着想法、脚本或参考片来咨询，一起把创意做出来。",
+      "赛蚨里奇 SAIFU 承接 AI 漫剧、AI 短剧、AI 视频、AI 广告与电商产品图制作，也提供 AI 视频工具和定制应用开发。欢迎带着想法、脚本或参考片来咨询，一起把创意做出来。",
     heroCta: "咨询一个项目",
     aboutLabel: "关于 SAIFU",
     aboutLead: "我们用 AI",
@@ -69,7 +69,7 @@ const copy = {
     contactLabel: "开始合作",
     contactTitle: "从一个想法，开始一段合作。",
     contactBody:
-      "AI 漫剧、AI 短剧、AI 视频、AI 广告，以及工具与应用开发，都欢迎咨询。告诉我们你想做什么、给谁看、希望是什么风格，我们一起讨论制作范围与报价。",
+      "AI 漫剧、AI 短剧、AI 视频、AI 广告、电商产品图，以及工具与应用开发，都欢迎咨询。告诉我们你想做什么、给谁看、希望是什么风格，我们一起讨论制作范围与报价。",
     contactCta: "描述需求，开始咨询",
   },
   en: {
@@ -77,7 +77,7 @@ const copy = {
     heroTop: "Stories imagined.",
     heroBottom: "Films made.",
     heroBody:
-      "AI video production for brands, agencies and storytellers. We create commercials, product videos, animation and narrative shorts — from your first idea to the final edit.",
+      "AI video production for brands, agencies and storytellers. We create commercials, short dramas, product videos, animation and ecommerce product images — from your first idea to the final edit.",
     heroCta: "Start a project",
     aboutLabel: "About SAIFU",
     aboutLead: "Your story.",
@@ -100,7 +100,7 @@ const copy = {
     storytellingBody:
       "Combine AI-generated imagery and footage with editing and sound. Length, formats, review stages and delivery files are agreed for each project.",
     servicesTitle: "What are you making?",
-    servicesLabel: "AI VIDEO PRODUCTION SERVICES",
+    servicesLabel: "AI VIDEO & IMAGE PRODUCTION SERVICES",
     toolTag: "For creative teams",
     toolTitle: "AI Video Tools",
     toolBody:
@@ -183,62 +183,56 @@ function HeroVideo() {
   );
 }
 
+// Below-fold video URLs are attached only near the viewport. Hidden videos
+// pause without discarding their buffered content or overriding the pause button.
+function DeferredVideo({ src, className = "", label }: { src: string; className?: string; label?: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [ready, setReady] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [wanted, setWanted] = useState(true);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      setVisible(entry.isIntersecting);
+      if (entry.isIntersecting) setReady(true);
+    }, { rootMargin: "160px 0px" });
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const sync = () => {
+      if (ready && visible && wanted && !document.hidden) video.play().catch(() => undefined);
+      else video.pause();
+    };
+    sync();
+    document.addEventListener("visibilitychange", sync);
+    return () => { document.removeEventListener("visibilitychange", sync); video.pause(); };
+  }, [ready, visible, wanted]);
+
+  return <>
+    <video ref={videoRef} className={className} src={ready ? src : undefined}
+      muted loop playsInline preload="none" aria-hidden={label ? undefined : true}
+      aria-label={label} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} />
+    {label && <button className="video-control liquid-glass" type="button"
+      aria-label={`${playing ? "Pause" : "Play"} ${label}`} aria-pressed={!wanted}
+      onClick={() => { setReady(true); setWanted(playing ? false : true); }}>
+      {playing ? <Pause size={17} fill="currentColor" /> : <Play size={18} fill="currentColor" />}
+    </button>}
+  </>;
+}
+
 function LoopingVideo({ src, className = "" }: { src: string; className?: string }) {
-  return (
-    <video
-      className={className}
-      src={src}
-      muted
-      autoPlay
-      loop
-      playsInline
-      preload="metadata"
-      aria-hidden="true"
-    />
-  );
+  return <DeferredVideo src={src} className={className} />;
 }
 
 function InteractiveVideo({ src, label }: { src: string; label: string }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(true);
-
-  const togglePlayback = async () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) {
-      await video.play().catch(() => undefined);
-      setPlaying(!video.paused);
-    } else {
-      video.pause();
-      setPlaying(false);
-    }
-  };
-
-  return (
-    <>
-      <video
-        ref={videoRef}
-        src={src}
-        muted
-        autoPlay
-        loop
-        playsInline
-        preload="metadata"
-        aria-label={label}
-        onPlay={() => setPlaying(true)}
-        onPause={() => setPlaying(false)}
-      />
-      <button
-        className="video-control liquid-glass"
-        type="button"
-        aria-label={`${playing ? "Pause" : "Play"} ${label}`}
-        aria-pressed={!playing}
-        onClick={togglePlayback}
-      >
-        {playing ? <Pause size={17} fill="currentColor" /> : <Play size={18} fill="currentColor" />}
-      </button>
-    </>
-  );
+  return <DeferredVideo src={src} label={label} />;
 }
 
 function SpotlightReveal({ language }: { language: Language }) {
@@ -472,11 +466,11 @@ export default function CompanyHome({ initialLanguage = "en" }: { initialLanguag
       )}
 
       <section className="hero" id="top">
-        <img className="hero-fallback" src="/hero-ai-video.webp" alt="" />
+        <img className="hero-fallback" src="/hero-ai-video.webp" alt="" width={1672} height={941} fetchPriority="high" />
         <HeroVideo />
         <div className="hero-shade" />
         <div className="hero-center">
-          <div className="hero-kicker">{language === "zh" ? "AI 漫剧 · AI 短剧 · AI 视频 · AI 广告" : "AI VIDEO · ANIMATION · COMMERCIALS"}</div>
+          <div className="hero-kicker">{language === "zh" ? "AI 视频 · AI 短剧 · AI 广告 · 电商产品图" : "AI VIDEO · COMMERCIALS · PRODUCT IMAGES"}</div>
           <h1>
             <motion.span
               className="display-accent"
@@ -574,7 +568,7 @@ export default function CompanyHome({ initialLanguage = "en" }: { initialLanguag
         <motion.div className="services-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .7 }}>
           <h2 className="display-accent">{t.servicesTitle}</h2><span>{t.servicesLabel}</span>
         </motion.div>
-        <p className="production-intro">{language === "zh" ? "四类制作业务均接受委托。无论已有脚本，还是只有一个想法，都欢迎先来咨询。" : "From a product launch to an original story, find the production service that fits your brief. You can commission a complete film or discuss support for part of the process."}</p>
+        <p className="production-intro">{language === "zh" ? "视频、短剧、漫剧、广告和电商产品图均接受委托。无论已有脚本，还是只有一个想法，都欢迎先来咨询。" : "From a product launch to an original story, find the production service that fits your brief. Commission a complete film, ecommerce product images or support for a specific production stage."}</p>
         <div className="production-grid">{productionOfferings.map((item, index) => <a className="production-card" key={item.slug} href={localPath(language, `/services/${item.slug}`)}><span className="production-number">0{index + 1}</span><h3>{item[language].title}</h3><p>{item[language].summary}</p><span className="production-card-cta">{language === "zh" ? "了解制作与咨询" : "Explore this service"}<ArrowUpRight size={17} /></span></a>)}</div>
         <div className="development-heading"><h3>{language === "zh" ? "同时提供 AI 工具与应用开发" : "We also build AI video tools and applications"}</h3><p>{language === "zh" ? "把创作流程，变成可以持续使用的产品。" : "Turn creative workflows into products people can use."}</p></div>
         <div className="services-grid">

@@ -1,0 +1,14 @@
+{
+  "Regular": {
+    "original_bytes": 4858624,
+    "subset_bytes": 87452,
+    "requested_characters": 784,
+    "covered_required_glyphs": 727
+  },
+  "Semibold": {
+    "original_bytes": 5034212,
+    "subset_bytes": 88896,
+    "requested_characters": 784,
+    "covered_required_glyphs": 727
+  }
+}

@@ -1,15 +1,18 @@
-# SAIFU — AI Video Production & Application Development
+# SAIFU — AI Video, Advertising & Ecommerce Product Images
 
-> AI video production for brands, agencies and storytellers: commercials, social ads, brand and product videos, animation, motion comics and narrative shorts. AI video tools and custom application development are also available.
+> AI video production for brands, agencies and storytellers: commercials, social ads, brand and product videos, animation, motion comics, narrative shorts and ecommerce product images. AI video tools and custom application development are also available.
 
 SAIFU (赛蚨里奇) is the brand of 北京赛蚨里奇科技有限公司, Beijing Saifuliqi Technology Co., Ltd. The official company website is https://saifuliqi.com/. The default entry redirects to the English site at /en. Chinese pages are available at /zh. Visitors choose languages using page links.
 
-The company accepts commissions for AI comic series, short dramas, creative videos and ads. It also develops AI video generation and editing tools and purpose-built applications. Its stated work combines capability selection, product design, software development and workflow integration. Production and development scope, costs and timelines are discussed for the actual brief; this website does not publish a self-serve subscription or a public video-generation API.
+The company accepts commissions for AI comic series, short dramas, creative videos, ads and ecommerce product images. It also develops AI video generation and editing tools and purpose-built applications. Its stated work combines capability selection, product design, software development and workflow integration. Production and development scope, costs and timelines are discussed for the actual brief; this website does not publish a self-serve subscription or a public video-generation API.
 
 ## Production services
 
+- [AI ecommerce product images](https://saifuliqi.com/en/services/ai-product-images): Product listing images, lifestyle scenes and promotional creatives based on actual product photographs.
+- [中文：AI 电商产品图制作](https://saifuliqi.com/zh/services/ai-product-images)
+
 - [AI animation and motion comics](https://saifuliqi.com/en/services/ai-comic-series): Comic-style narrative videos and episodic stories.
-- [AI short films and narrative series](https://saifuliqi.com/en/services/ai-short-dramas): Short dramas and narrative films.
+- [AI short dramas and narrative films](https://saifuliqi.com/en/services/ai-short-dramas): Short dramas and narrative films.
 - [AI video production](https://saifuliqi.com/en/services/ai-video-production): Brand content, product introductions and creative films.
 - [AI commercials and social ads](https://saifuliqi.com/en/services/ai-ad-production): Ads, brand commercials and product promotion videos.
 - [中文：AI 漫剧制作](https://saifuliqi.com/zh/services/ai-comic-series)
@@ -35,4 +38,4 @@ The company accepts commissions for AI comic series, short dramas, creative vide
 
 ## Contact
 
-Business and development inquiries: hello@saifuliqi.com.
+Production and development inquiries: hello@saifuliqi.com.

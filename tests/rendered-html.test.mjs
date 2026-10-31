@@ -31,7 +31,7 @@ test("server-renders the Chinese company homepage with crawlable service links",
   const html = await response.text();
   assert.match(html, /<html lang="zh-CN"/);
   assert.match(html, /class="site language-zh"/);
-  assert.equal(seo(html).title, "AI 漫剧、短剧、视频与广告制作｜赛蚨里奇 SAIFU");
+  assert.equal(seo(html).title, "AI 视频、短剧、广告与电商产品图制作｜赛蚨里奇 SAIFU");
   assert.match(html, /src="\/saifu-mark\.svg"/);
   assert.match(html, /让想象/);
   assert.match(html, /成为视频。/);
@@ -45,7 +45,7 @@ test("server-renders the Chinese company homepage with crawlable service links",
   for (const slug of ["ai-comic-series", "ai-short-dramas", "ai-video-production", "ai-ad-production"]) {
     assert.ok(html.includes(`href="/zh/services/${slug}"`), `Missing commissioned service ${slug}`);
   }
-  assert.match(html, /四类制作业务均接受委托/);
+  assert.match(html, /电商产品图均接受委托/);
   assert.match(html, /<meta name="google-site-verification" content="j_DuvBLdaly267Sro5sH49oz0fj0Wvg5c8J1_VFbpis"\//);
 });
 
@@ -58,7 +58,7 @@ test("the English homepage is English before JavaScript runs", async () => {
   assert.match(html, /Stories imagined\./);
   assert.match(html, /Films made\./);
   assert.match(html, /href="\/en\/services\/ai-video-tools"/);
-  assert.equal(seo(html).title, "AI Video Production, Animation &amp; Commercials | SAIFU");
+  assert.equal(seo(html).title, "AI Video Production, Ads &amp; Ecommerce Product Images | SAIFU");
   // English must never collapse into the Chinese canonical URL.
   assert.equal(seo(html).canonicals[0]?.href, "https://saifuliqi.com/en");
 });
@@ -66,8 +66,8 @@ test("the English homepage is English before JavaScript runs", async () => {
 test("all sitemap pages render unique metadata, reciprocal language links and valid schemas", async () => {
   const sitemap = await readFile(new URL("../public/sitemap.xml", import.meta.url), "utf8");
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
-  assert.equal(urls.length, 18);
-  assert.equal(new Set(urls).size, 18);
+  assert.equal(urls.length, 20);
+  assert.equal(new Set(urls).size, 20);
   const titles = new Set();
   const descriptions = new Set();
   for (const url of urls) {
@@ -106,7 +106,7 @@ test("all sitemap pages render unique metadata, reciprocal language links and va
       assert.match(html, /dateTime="2026-10-29"/i);
     }
   }
-  assert.equal([...sitemap.matchAll(/hreflang="en"/g)].length, 18);
+  assert.equal([...sitemap.matchAll(/hreflang="en"/g)].length, 20);
 });
 
 test("unknown service slugs return 404 instead of indexable placeholder pages", async () => {
@@ -128,7 +128,7 @@ test("preserves the bilingual design, responsive layouts and crawler entry point
   assert.doesNotMatch(page, /ICP备案|公安备案/);
   assert.match(site, /\/og\.png/);
   assert.match(css, /@media \(max-width: 620px\)/);
-  assert.match(css, /MiSans-Regular\.woff2/);
+  assert.match(css, /MiSans-Regular-site-20261031\.woff2/);
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.match(warpCss, /white-space:\s*pre;/);
   assert.doesNotMatch(warpCss, /white-space:\s*pre-line;/);
@@ -154,4 +154,27 @@ test("the global entry is English and legacy Chinese links preserve their destin
   assert.match(english, /mailto:hello@saifuliqi.com\?subject=/);
   const visible = english.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "").replace(/<[^>]*>/g, "");
   assert.doesNotMatch(visible, /北京|赛蚨里奇/);
+});
+
+
+test("product-image pages describe a commission, truthful product review and a useful brief", async () => {
+  for (const language of ["en", "zh"]) {
+    const path = `/${language}/services/ai-product-images`;
+    const html = await (await render(path)).text();
+    assert.match(html, /SKU/);
+    assert.match(html, /hello@saifuliqi\.com/);
+    assert.match(html, /mailto:hello@saifuliqi\.com\?subject=/);
+    assert.ok(seo(html).schemas.some(x => x["@type"] === "Service" && x.provider["@id"] === "https://saifuliqi.com/#organization"));
+    assert.ok(html.includes(language === "en" ? "Marketplace approval cannot be guaranteed" : "平台审核结果不能预先保证"));
+    const home = await (await render(`/${language}`)).text();
+    assert.ok(home.includes(`href="${path}"`));
+  }
+});
+
+test("initial homepage loads one hero video while four deferred videos have no source", async () => {
+  const html = await (await render("/en")).text();
+  const videos = [...html.matchAll(/<video\b[^>]*>/g)].map(m => attributes(m[0]));
+  assert.equal(videos.length, 5);
+  assert.equal(videos.filter(v => v.src).length, 1);
+  assert.equal(videos.filter(v => v.preload === "none" && !v.src).length, 4);
 });

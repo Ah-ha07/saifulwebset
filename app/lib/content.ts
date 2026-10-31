@@ -109,11 +109,11 @@ const productionDetails: Record<string, Record<Language, ServiceCopy>> = {
       ]
     },
     "en": {
-      "title": "AI Short Film & Narrative Series Production | SAIFU",
+      "title": "AI Short Drama & Narrative Film Production | SAIFU",
       "description": "AI short films and narrative series, from concept and characters to picture, sound and editing. Bring your story or script to SAIFU to discuss production.",
-      "eyebrow": "AI SHORT FILMS & NARRATIVE SERIES",
+      "eyebrow": "AI SHORT DRAMAS & NARRATIVE FILMS",
       "heading": "An original story, made for the screen.",
-      "lead": "Develop your idea into an AI short film or narrative series. We work with the story, characters, visual direction, sound and edit to bring the intended emotion to the screen.",
+      "lead": "Develop your idea into an AI short drama, short film or narrative series. We work with the story, characters, visual direction, sound and edit to bring the intended emotion to the screen.",
       "sections": [
         {
           "heading": "Start with the audience and story",
@@ -249,7 +249,7 @@ const productionDetails: Record<string, Record<Language, ServiceCopy>> = {
       ]
     },
     "en": {
-      "title": "AI Commercials & Social Video Ads | SAIFU",
+      "title": "AI Ad Production & Social Video Commercials | SAIFU",
       "description": "AI commercial production and social video ads for brands and agencies. Create product launch films and campaign videos with SAIFU. Discuss your brief and request a quote.",
       "eyebrow": "AI COMMERCIALS & SOCIAL ADS",
       "heading": "Your product. A story worth watching.",
@@ -286,6 +286,17 @@ const productionDetails: Record<string, Record<Language, ServiceCopy>> = {
 };
 
 export const productionOfferings = [
+{
+  "slug": "ai-product-images",
+  "zh": {
+    "title": "AI 电商产品图制作",
+    "summary": "商品主图、场景图与广告素材，围绕真实产品制作。"
+  },
+  "en": {
+    "title": "AI Ecommerce Product Images",
+    "summary": "Product listing images, lifestyle scenes and ad creatives based on your real product."
+  }
+},
   {
     "slug": "ai-comic-series",
     "zh": {
@@ -304,7 +315,7 @@ export const productionOfferings = [
       "summary": "剧情、人物与镜头节奏，把故事做成短剧。"
     },
     "en": {
-      "title": "AI Short Films & Narrative Series",
+      "title": "AI Short Dramas & Narrative Films",
       "summary": "Story-led short films, concept trailers and episodic narratives."
     }
   },
@@ -334,6 +345,90 @@ export const productionOfferings = [
 
 export const services: Record<string, Record<Language, ServiceCopy>> = {
   ...productionDetails,
+  "ai-product-images": {
+  "zh": {
+    "title": "AI 电商产品图制作、场景图与商品主图设计｜SAIFU",
+    "description": "赛蚨里奇 SAIFU 承接 AI 电商产品图制作、商品主图、场景图与广告素材。根据真实产品照片、品牌要求和发布平台，沟通商品细节、图片数量、尺寸、修改范围与项目报价。",
+    "eyebrow": "AI 电商产品图制作",
+    "heading": "把真实产品，放进值得被看见的画面。",
+    "lead": "SAIFU 为品牌与电商商家制作 AI 产品图、商品场景图和推广素材。从已有产品照片和视觉参考开始，讨论适合商品页、社交媒体或广告投放的图片方案。",
+    "sections": [
+      {
+        "heading": "可以委托制作哪些产品图片？",
+        "paragraphs": [
+          "可以围绕单个产品或一组 SKU，制作统一风格的场景图、产品卖点图与推广视觉。白底商品主图、详情页图片、横竖版广告素材和节日主题图，可根据实际素材与平台规则讨论。"
+        ],
+        "points": [
+          "电商商品主图与产品展示图。",
+          "生活方式场景图、品牌氛围图与产品组合图。",
+          "商品详情页、社交媒体和广告的图片素材。"
+        ]
+      },
+      {
+        "heading": "需要提供什么素材？",
+        "paragraphs": [
+          "请提供清晰的实拍产品图，尽量包含正面、侧面、背面和关键细节，以及准确的颜色、材质、尺寸和包装信息。补充 Logo、品牌规范、喜欢的视觉参考、SKU 数量、使用平台和目标图片尺寸。",
+          "没有完整拍摄素材时，可以先发送现有图片，评估是否需要补拍。AI 不能从看不见的角度可靠还原所有结构，复杂文字、标签和精密细节需要单独确认。"
+        ]
+      },
+      {
+        "heading": "先确认商品准确，再讨论视觉变化",
+        "paragraphs": [
+          "主体形状、配色、Logo、标签、接口和随附配件应与实物一致。背景、光线和布景可以讨论调整，不能用图片添加不存在的功能、认证或配件。",
+          "制作前约定一张代表性样图和核对清单，确认商品细节与风格后，再讨论同系列扩展。发布前由商品方核对真实性、文字与平台要求；平台审核结果不能预先保证。"
+        ]
+      },
+      {
+        "heading": "交付与报价如何确定？",
+        "paragraphs": [
+          "图片数量、SKU 数量、场景复杂度、精修要求、输出尺寸和修改轮次会影响工作量。交付格式、是否需要透明背景、文件命名、时间与使用范围在开工前约定。",
+          "发送产品照片、参考图、图片用途和数量至 hello@saifuliqi.com，即可讨论制作范围与报价。需要产品视频或广告时，也可在同一份需求中说明。"
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "AI Product Image Creation for Ecommerce Brands | SAIFU",
+    "description": "Commission AI product images, lifestyle scenes and ecommerce ad creatives with SAIFU. Share real product photos, SKU counts, brand references and image formats for a project quote.",
+    "eyebrow": "AI ECOMMERCE PRODUCT IMAGES",
+    "heading": "Your real product. A considered visual setting.",
+    "lead": "SAIFU creates AI product images, lifestyle scenes and promotional visuals for ecommerce brands. Begin with existing product photos and a visual reference, then plan images for product pages, social media or advertising.",
+    "sections": [
+      {
+        "heading": "What product images can you commission?",
+        "paragraphs": [
+          "Discuss a single product or a group of SKUs with a consistent visual direction. The scope may include clean-background listing images, lifestyle scenes, detail-page graphics, campaign concepts and horizontal or vertical ad assets, subject to the source material and platform requirements."
+        ],
+        "points": [
+          "Ecommerce listing and product presentation images.",
+          "Lifestyle scenes, brand settings and product group compositions.",
+          "Image creatives for product detail pages, social media and advertising."
+        ]
+      },
+      {
+        "heading": "What should you provide?",
+        "paragraphs": [
+          "Send clear photographs of the actual product, including front, side, back and important details where available. Include accurate colors, materials, dimensions and packaging information, plus logos, brand guidelines, visual references, SKU counts, intended platforms and output sizes.",
+          "If your assets are incomplete, share what you have so we can assess whether more photography is needed. Unseen structures cannot always be reconstructed reliably; small text, labels and precise details need separate review."
+        ]
+      },
+      {
+        "heading": "Product accuracy comes before visual variation",
+        "paragraphs": [
+          "Shape, colors, logos, labels, connectors and included accessories should match the real item. Backgrounds, lighting and settings can be explored without inventing features, certifications or accessories.",
+          "Agree on a representative sample and a product-detail checklist before expanding a series. The product owner reviews accuracy, wording and platform requirements before publication. Marketplace approval cannot be guaranteed in advance."
+        ]
+      },
+      {
+        "heading": "Deliverables and project pricing",
+        "paragraphs": [
+          "Image count, SKU count, scene complexity, retouching, output sizes and revision rounds affect the scope. File formats, transparent backgrounds if required, naming, timing and usage are agreed before production.",
+          "Email hello@saifuliqi.com with product photos, visual references, intended use and the number of images. If you also need a product video or commercial, include that in the same brief."
+        ]
+      }
+    ]
+  }
+},
   "ai-video-tools": {
     zh: {
       title: "AI 视频工具开发：生成、编辑与创作工作流｜SAIFU",
@@ -386,18 +481,20 @@ export const services: Record<string, Record<Language, ServiceCopy>> = {
 
 export const faq = {
   zh: [
-    { question: "赛蚨里奇 SAIFU 是做什么的？", answer: "北京赛蚨里奇科技有限公司以 SAIFU 为品牌，承接 AI 漫剧、AI 短剧、AI 视频与 AI 广告制作，同时提供 AI 视频工具和定制应用开发。欢迎个人创作者、品牌与企业团队咨询项目。" },
-    { question: "AI 漫剧、短剧、视频和广告都可以委托制作吗？", answer: "可以，我们承接这四类制作项目。你可以提供想法、脚本、参考片或已有素材，先沟通作品方向、用途、时长与制作范围，再讨论报价和安排。" },
+    { question: "电商产品图可以保持实物细节吗？", answer: "制作以真实产品照片和商品资料为依据，先核对形状、配色、Logo、文字与配件。看不见的结构或精密细节可能需要补拍或精修。先确认代表性样图，再扩展其他场景；商品方在发布前复核真实性与平台要求。" },
+    { question: "赛蚨里奇 SAIFU 是做什么的？", answer: "北京赛蚨里奇科技有限公司以 SAIFU 为品牌，承接 AI 漫剧、AI 短剧、AI 视频、AI 广告与电商产品图制作，同时提供 AI 视频工具和定制应用开发。欢迎个人创作者、品牌与企业团队咨询项目。" },
+    { question: "AI 视频、短剧、广告和电商产品图都可以委托制作吗？", answer: "可以，我们承接 AI 视频、短剧、漫剧、广告与电商产品图制作。你可以提供想法、脚本、参考片或已有素材，先沟通作品方向、用途、时长与制作范围，再讨论报价和安排。" },
     { question: "只有一个想法，也可以来咨询吗？", answer: "欢迎。先告诉我们你想讲的故事、想介绍的产品或视频要达到的沟通目的，再一起讨论风格、内容和适合的第一步。初次咨询无需准备完整的脚本或需求文档。" },
     { question: "AI 视频工具开发和定制应用开发有什么区别？", answer: "工具开发侧重可反复使用的生成、编辑与创作体验；定制应用开发从特定业务出发，围绕现有系统、人员交接和使用场景组织视频能力。需求存在交叉时，可以先用原型确定产品范围。" },
     { question: "已有产品可以接入 AI 视频能力吗？", answer: "可以就现有产品的具体流程讨论接入方式。需要先了解素材输入、目标视频、可用接口和审核要求，再判断适合的能力与集成范围。" },
-    { question: "开始讨论项目，需要准备什么？", answer: "制作项目可以提供想法或脚本、参考片、视频用途、目标时长和时间要求；开发项目可以补充目标用户与现有流程。只有一个初步想法也欢迎先来聊。" },
-    { question: "项目价格和开发周期如何确定？", answer: "制作费用与周期取决于时长、集数、风格、素材、配音剪辑和交付要求；开发项目还需要评估功能与集成范围。具体报价、修改范围和安排在沟通需求后约定。" },
+    { question: "开始讨论项目，需要准备什么？", answer: "视频项目可以提供想法或脚本、参考片、用途、目标时长和时间要求；产品图项目请提供实拍图、SKU 与图片数量、用途和尺寸；开发项目可以补充目标用户与现有流程。只有一个初步想法也欢迎先来聊。" },
+    { question: "项目价格和开发周期如何确定？", answer: "视频费用与周期取决于时长、集数、风格、素材、配音剪辑和交付要求；产品图则结合 SKU、张数、场景、精修和尺寸评估；开发项目还需要评估功能与集成范围。具体报价、修改范围和安排在沟通需求后约定。" },
     { question: "生成的视频一定能达到预期效果吗？", answer: "不同素材和场景的生成表现会有差异。合作前应使用代表性输入验证画面质量、风格一致性、生成耗时和可修改程度，并把可以接受的结果写入验收要求。" },
     { question: "如何联系 SAIFU？", answer: "可以发送邮件至 hello@saifuliqi.com，简要介绍你的产品、使用场景和希望改进的视频流程。官网提供中文与英文的服务介绍，便于项目沟通。" },
   ],
   en: [
-    { question: "What can I create with SAIFU?", answer: "We produce AI commercials, social video ads, brand and product videos, animation, motion comics and narrative shorts. We also develop AI video tools and custom applications for creative teams and businesses." },
+    { question: "Can I commission ecommerce product images?", answer: "Yes. We create product listing images, lifestyle scenes and advertising visuals based on real product photographs. Send product details, SKU and image counts, visual references and output sizes. Product accuracy is reviewed through a representative sample before a series is expanded." },
+    { question: "What can I create with SAIFU?", answer: "We produce AI commercials, social video ads, brand and product videos, animation, motion comics, narrative shorts and ecommerce product images. We also develop AI video tools and custom applications for creative teams and businesses." },
     { question: "Do I need a finished script to get started?", answer: "No. An idea, product summary or a few visual references are enough for an initial conversation. Tell us who the video is for and what it should communicate. We can then discuss the creative direction and production support you need." },
     { question: "How do I request a quote?", answer: "Email hello@saifuliqi.com with the type of video, intended use, approximate length, formats, visual references and target date. Include a budget range if you have one. We’ll discuss the brief and agree on the production scope before quoting." },
     { question: "Can I commission a full video or just part of the production?", answer: "Both can be discussed. A project may cover concept and script development, storyboards, visual direction, AI-generated footage, voiceover, sound and editing. If you already have a script or assets, tell us which stages you need help with." },

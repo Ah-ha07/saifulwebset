@@ -54,21 +54,21 @@ export function ServicePage({ language, slug }: { language: Language; slug: stri
       serviceType: copy.eyebrow, description: copy.lead, url: `${siteUrl}${localPath(language, path)}`,
       provider: { "@id": `${siteUrl}/#organization` },
     }]} />
-    <div className="document-hero"><span className="section-label">{copy.eyebrow}</span><h1>{copy.heading}</h1><p>{copy.lead}</p><a className="document-hero-link" href={inquiryHref(language)}>{language === "zh" ? "讨论你的项目" : "Discuss your project"} <span aria-hidden="true">↗</span></a></div>
+    <div className="document-hero"><span className="section-label">{copy.eyebrow}</span><h1>{copy.heading}</h1><p>{copy.lead}</p><a className="document-hero-link" href={inquiryHref(language, copy.eyebrow)}>{language === "zh" ? "讨论你的项目" : "Discuss your project"} <span aria-hidden="true">↗</span></a></div>
     <article className="document-article">{copy.sections.map(section => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map(p => <p key={p}>{p}</p>)}{section.points && <ul>{section.points.map(point => <li key={point}>{point}</li>)}</ul>}</section>)}</article>
   </Shell>;
 }
 
 export const faqMeta = {
-  zh: { title: "AI 视频制作、开发与项目咨询常见问题｜SAIFU", description: "了解 AI 漫剧、短剧、视频和广告制作的合作方式，以及工具与定制应用开发。查看项目准备、报价与周期问题，欢迎联系赛蚨里奇咨询。" },
-  en: { title: "AI Video Production & Development FAQ | SAIFU", description: "Planning an AI video project? Learn about briefs, quotes, production stages, revisions and delivery formats for commercials, animation and brand films with SAIFU." },
+  zh: { title: "AI 视频制作、开发与项目咨询常见问题｜SAIFU", description: "了解 AI 视频、短剧、广告和电商产品图制作的合作方式，以及工具与定制应用开发。查看项目准备、报价与周期问题，欢迎联系赛蚨里奇咨询。" },
+  en: { title: "AI Video Production & Development FAQ | SAIFU", description: "Planning an AI video project? Learn about briefs, quotes, production stages, revisions and delivery formats for commercials, short dramas and ecommerce product images with SAIFU." },
 };
 
 export function FaqPage({ language }: { language: Language }) {
   const copy = faqMeta[language];
   return <Shell language={language} path="/faq" title={language === "zh" ? "常见问题" : "FAQ"}>
     <StructuredPage language={language} path="/faq" title={copy.title} description={copy.description} />
-    <div className="document-hero"><span className="section-label">{language === "zh" ? "项目合作" : "WORKING WITH SAIFU"}</span><h1>{language === "zh" ? "制作与开发，欢迎来聊。" : "Planning a project? Start here."}</h1><p>{language === "zh" ? "AI 漫剧、短剧、视频、广告与应用开发，从服务范围到项目准备，先回答开始合作前的常见问题。" : "From your first idea to production scope, reviews and final files: answers to the questions that help you plan a project with SAIFU."}</p></div>
+    <div className="document-hero"><span className="section-label">{language === "zh" ? "项目合作" : "WORKING WITH SAIFU"}</span><h1>{language === "zh" ? "制作与开发，欢迎来聊。" : "Planning a project? Start here."}</h1><p>{language === "zh" ? "AI 视频、短剧、广告、电商产品图与应用开发，从服务范围到项目准备，先回答开始合作前的常见问题。" : "From your first idea to production scope, reviews and final files: answers to the questions that help you plan a project with SAIFU."}</p></div>
     <div className="document-faq">{faq[language].map(item => <section key={item.question}><h2>{item.question}</h2><p>{item.answer}</p></section>)}</div>
   </Shell>;
 }

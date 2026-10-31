@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export type Language = "zh" | "en";
 export const siteUrl = "https://saifuliqi.com";
 export const companyName = "北京赛蚨里奇科技有限公司";
-export const contentPaths = ["", "/services/ai-comic-series", "/services/ai-short-dramas", "/services/ai-video-production", "/services/ai-ad-production", "/services/ai-video-tools", "/services/custom-ai-video-applications", "/faq", "/guides/planning-an-ai-video-project"] as const;
+export const contentPaths = ["", "/services/ai-comic-series", "/services/ai-short-dramas", "/services/ai-video-production", "/services/ai-ad-production", "/services/ai-product-images", "/services/ai-video-tools", "/services/custom-ai-video-applications", "/faq", "/guides/planning-an-ai-video-project"] as const;
 
 export function localPath(language: Language, path = "") {
   return `/${language}${path}`;
@@ -41,15 +41,15 @@ export function pageMetadata(language: Language, path: string, title: string, de
 }
 
 export const homeMeta = {
-  zh: { title: "AI 漫剧、短剧、视频与广告制作｜赛蚨里奇 SAIFU", description: "赛蚨里奇 SAIFU 承接 AI 漫剧、AI 短剧、AI 视频及 AI 广告制作，也提供 AI 视频工具与定制应用开发。欢迎带着想法、脚本或参考片咨询合作，沟通风格、用途与项目报价。" },
-  en: { title: "AI Video Production, Animation & Commercials | SAIFU", description: "AI video production for brands, agencies and storytellers. Create commercials, product videos, animation and narrative shorts with SAIFU. Tell us about your project." },
+  zh: { title: "AI 视频、短剧、广告与电商产品图制作｜赛蚨里奇 SAIFU", description: "赛蚨里奇 SAIFU 承接 AI 视频、AI 短剧、AI 漫剧、AI 广告与电商产品图制作，也提供 AI 视频工具与定制应用开发。欢迎带着想法、脚本、产品照片或参考片咨询合作，沟通风格、用途与项目报价。" },
+  en: { title: "AI Video Production, Ads & Ecommerce Product Images | SAIFU", description: "AI video production for brands, agencies and storytellers. Commission AI ads, short dramas, product videos and ecommerce product images. Share your brief for a project quote." },
 };
 
 export const organization = {
   "@type": "Organization", "@id": `${siteUrl}/#organization`, name: "SAIFU", legalName: companyName,
   alternateName: ["赛蚨里奇", "Beijing Saifuliqi Technology Co., Ltd."],
   url: `${siteUrl}/`, logo: `${siteUrl}/saifu-mark-purple.svg`, email: "hello@saifuliqi.com",
-  description: "AI video production for brands, agencies and storytellers: commercials, product videos, animation and narrative shorts, alongside custom AI video tools and applications.",
+  description: "AI video production for brands, agencies and storytellers: commercials, short dramas, product videos, animation and ecommerce product images, alongside custom AI video tools and applications.",
   contactPoint: { "@type": "ContactPoint", email: "hello@saifuliqi.com", contactType: "business inquiries", availableLanguage: ["zh-CN", "en"] },
 };
 
@@ -69,9 +69,13 @@ export function pageData(language: Language, path: string, name: string, descrip
   };
 }
 
-export function inquiryHref(language: Language) {
-  if (language === "zh") return "mailto:hello@saifuliqi.com";
-  const subject = "Project inquiry — SAIFU";
-  const body = "Hi SAIFU,\n\nI'd like to discuss a project.\n\nWhat I'd like to create:\nAudience and where it will be used:\nApproximate length and formats:\nStyle references or existing assets:\nTarget date:\nBudget range (if known):\n\nMy name / company:\n";
+export function inquiryHref(language: Language, service?: string) {
+  if (language === "zh") {
+    const subject = service ? `${service}项目咨询 — SAIFU` : "制作项目咨询 — SAIFU";
+    const body = `你好 SAIFU，\n\n想委托制作：${service ?? ""}\n用途与受众：\n视频时长／集数，或产品 SKU／图片数量：\n素材与参考：\n交付尺寸与格式：\n目标时间：\n预算范围（如有）：\n\n姓名／公司：\n`;
+    return `mailto:hello@saifuliqi.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+  const subject = service ? `${service} inquiry — SAIFU` : "Project inquiry — SAIFU";
+  const body = "Hi SAIFU,\n\nI'd like to discuss a project.\n\nWhat I'd like to create:\nAudience and where it will be used:\nVideo length / episodes or product SKU / image count:\nOutput sizes and formats:\nStyle references or existing assets:\nTarget date:\nBudget range (if known):\n\nMy name / company:\n";
   return `mailto:hello@saifuliqi.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
